@@ -1,0 +1,56 @@
+
+<div class="container-fluid">
+
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="row">
+      <div class="col-sm-1 col-md-1 col-lg-1">
+        <a [routerLink]="['/apitest']"
+           class="navbar-brand pull-left my-white-color">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11">
+        Create Wallet
+      </div>
+    </div>
+  </nav>
+
+  <div class="my-container">
+    <div class="row input-group">
+      <input [(ngModel)]="searchText"
+             type="text"
+             class="form-control"
+             name="searchText"
+             placeholder="Enter a phrase using alphabets"
+             autofocus>
+
+      <span class="input-group-btn">
+         <a type="button"
+            (click)="createWallet()"
+            class="btn btn-default">
+             <span class="glyphicon glyphicon-ok"></span>
+         </a>
+      </span>
+    </div>
+    <div class="my-container row" *ngIf="address">
+      <br>
+      <label>Address</label>
+      <span>{{address}}</span>
+      <br>
+      <label>Private key</label>
+      <span>{{privatekey}}</span>
+    </div>
+
+    <nav class="navbar navbar-custom navbar-fixed-bottom">
+      <div class="container-fluid">
+        <p class="navbar-text pull-right">
+          <a [routerLink]="['/profile']">
+            <span class="glyphicon glyphicon-user my-white-color"></span>
+          </a>
+        </p>
+
+      </div>
+    </nav>
+  </div>
+</div>

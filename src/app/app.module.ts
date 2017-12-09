@@ -16,6 +16,8 @@ import { WebsiteListComponent } from './components/website/website-list/website-
 import {WebsiteService} from './services/website.service.client';
 import {BittrexService} from './services/bittrex.service.client';
 import { ApiTestComponent } from './components/api-test/api-test.component';
+import { WalletComponent } from './components/wallet/wallet.component';
+import {WalletService} from './services/wallet.service.client';
 
 @NgModule({
   // Declare components here
@@ -27,7 +29,8 @@ import { ApiTestComponent } from './components/api-test/api-test.component';
     TodoListComponent,
     TodoEditComponent,
     WebsiteListComponent,
-    ApiTestComponent
+    ApiTestComponent,
+    WalletComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { ApiTestComponent } from './components/api-test/api-test.component';
     Routing
   ],
   // Client Side services here
-  providers: [ TestService, TodoService, WebsiteService, BittrexService ],
+  providers: [ TestService, TodoService, WebsiteService, BittrexService, WalletService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

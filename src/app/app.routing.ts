@@ -1,6 +1,3 @@
-/**
- * Created by sesha on 7/26/17.
- */
 
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
@@ -10,6 +7,7 @@ import {TodoComponent} from './todo/todo.component';
 import {TodoListComponent} from './todo-list/todo-list.component';
 import {WebsiteListComponent} from './components/website/website-list/website-list.component';
 import {ApiTestComponent} from './components/api-test/api-test.component';
+import {WalletComponent} from './components/wallet/wallet.component';
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -17,7 +15,8 @@ const APP_ROUTES: Routes = [
   {path: 'todoList', component : TodoListComponent},
   {path: 'test', component: TestComponent},
   {path: 'website', component: WebsiteListComponent},
-  {path: 'apitest', component: ApiTestComponent}
+  {path: 'apitest', component: ApiTestComponent},
+  {path: 'createwallet', component: WalletComponent}
 ];
 
 // Export the routes as module providers

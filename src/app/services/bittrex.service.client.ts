@@ -5,7 +5,7 @@ import {Http} from '@angular/http';
 export class BittrexService {
   result: any;
 
-  urlBase = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=TEXT&tsyms=USD';
+  urlBase = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=TEXT&tsyms=INR,USD';
   constructor(private http: Http) {
 
   }

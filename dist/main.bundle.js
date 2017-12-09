@@ -96,12 +96,16 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_website_service_client__ = __webpack_require__("../../../../../src/app/services/website.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_bittrex_service_client__ = __webpack_require__("../../../../../src/app/services/bittrex.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_api_test_api_test_component__ = __webpack_require__("../../../../../src/app/components/api-test/api-test.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_wallet_wallet_component__ = __webpack_require__("../../../../../src/app/components/wallet/wallet.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_wallet_service_client__ = __webpack_require__("../../../../../src/app/services/wallet.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -135,7 +139,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__todo_list_todo_list_component__["a" /* TodoListComponent */],
             __WEBPACK_IMPORTED_MODULE_11__todo_list_todo_edit_component__["a" /* TodoEditComponent */],
             __WEBPACK_IMPORTED_MODULE_13__components_website_website_list_website_list_component__["a" /* WebsiteListComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_api_test_api_test_component__["a" /* ApiTestComponent */]
+            __WEBPACK_IMPORTED_MODULE_16__components_api_test_api_test_component__["a" /* ApiTestComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_wallet_wallet_component__["a" /* WalletComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -144,7 +149,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__app_routing__["a" /* Routing */]
         ],
         // Client Side services here
-        providers: [__WEBPACK_IMPORTED_MODULE_8__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_12__services_todo_service_client__["a" /* TodoService */], __WEBPACK_IMPORTED_MODULE_14__services_website_service_client__["a" /* WebsiteService */], __WEBPACK_IMPORTED_MODULE_15__services_bittrex_service_client__["a" /* BittrexService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_8__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_12__services_todo_service_client__["a" /* TodoService */], __WEBPACK_IMPORTED_MODULE_14__services_website_service_client__["a" /* WebsiteService */], __WEBPACK_IMPORTED_MODULE_15__services_bittrex_service_client__["a" /* BittrexService */], __WEBPACK_IMPORTED_MODULE_18__services_wallet_service_client__["a" /* WalletService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -165,9 +170,8 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__todo_list_todo_list_component__ = __webpack_require__("../../../../../src/app/todo-list/todo-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_website_website_list_website_list_component__ = __webpack_require__("../../../../../src/app/components/website/website-list/website-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_api_test_api_test_component__ = __webpack_require__("../../../../../src/app/components/api-test/api-test.component.ts");
-/**
- * Created by sesha on 7/26/17.
- */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_wallet_wallet_component__ = __webpack_require__("../../../../../src/app/components/wallet/wallet.component.ts");
+
 
 
 
@@ -181,10 +185,11 @@ var APP_ROUTES = [
     { path: 'todoList', component: __WEBPACK_IMPORTED_MODULE_4__todo_list_todo_list_component__["a" /* TodoListComponent */] },
     { path: 'test', component: __WEBPACK_IMPORTED_MODULE_2__components_test_test_component__["a" /* TestComponent */] },
     { path: 'website', component: __WEBPACK_IMPORTED_MODULE_5__components_website_website_list_website_list_component__["a" /* WebsiteListComponent */] },
-    { path: 'apitest', component: __WEBPACK_IMPORTED_MODULE_6__components_api_test_api_test_component__["a" /* ApiTestComponent */] }
+    { path: 'apitest', component: __WEBPACK_IMPORTED_MODULE_6__components_api_test_api_test_component__["a" /* ApiTestComponent */] },
+    { path: 'createwallet', component: __WEBPACK_IMPORTED_MODULE_7__components_wallet_wallet_component__["a" /* WalletComponent */] }
 ];
 // Export the routes as module providers
-var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(APP_ROUTES);
+var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forRoot(APP_ROUTES);
 //# sourceMappingURL=app.routing.js.map
 
 /***/ }),
@@ -197,7 +202,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "div#crypto-container {\n  background: white;\n  width: 70%;\n  margin-top: 30px;\n  margin: 0 auto 4px auto;\n  padding: 1em;\n  box-shadow: 1px 1px 0 lightgrey;\n}\n\nspan.left {\n  font-weight: bold;\n}\n\nspan.right {\n  float: right;\n}\n", ""]);
+exports.push([module.i, "div#crypto-container {\n  background: white;\n  width: 70%;\n  margin-top: 30px;\n  margin: 0 auto 4px auto;\n  padding: 1em;\n  box-shadow: 1px 1px 0 lightgrey;\n}\n\nspan.left {\n  font-weight: bold;\n}\n\nspan.right {\n  float: right;\n}\n\nspan.rightest {\n  float: right;\n  margin-left: 10px;\n}\n", ""]);
 
 // exports
 
@@ -210,7 +215,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/api-test/api-test.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"\"\n           class=\"navbar-brand pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        Test API\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n\n    <div class=\"row input-group\">\n      <input [(ngModel)]=\"searchText\"\n             type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search\"\n             autofocus>\n      <span class=\"input-group-btn\">\n         <a (click)=\"searchCrypto()\"\n            class=\"btn btn-default\"\n            type=\"button\">\n             <span class=\"glyphicon glyphicon-search\"></span>\n         </a>\n      </span>\n    </div>\n\n      <div class=\"row\" *ngIf=\"cryptos\">\n        <div id=\"crypto-container\" *ngFor=\"let crypto of objectKeys(cryptos)\">\n          <span class=\"left\">{{crypto}}</span>\n          <span class=\"right\">{{cryptos[crypto].USD | currency:'USD':true}}</span>\n        </div>\n      </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n\n    </div>\n  </nav>\n</div>\n"
+module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"\"\n           class=\"navbar-brand pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-6 col-md-6 col-lg-6\">\n        Test API\n      </div>\n      <div class=\"col-sm-5 col-md-5 col-lg-5\">\n        <a [routerLink]=\"['/createwallet']\"\n           class=\"btn btn-danger navbar-brand pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n    <div class=\"row input-group\">\n      <input [(ngModel)]=\"searchText\"\n             type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search rate of coins in USD. Enter coin name. Example: BTC,LTC\"\n             autofocus>\n      <span class=\"input-group-btn\">\n         <a (click)=\"searchCrypto()\"\n            class=\"btn btn-default\"\n            type=\"button\">\n             <span class=\"glyphicon glyphicon-search\"></span>\n         </a>\n      </span>\n    </div>\n\n    <div class=\"row\" *ngIf=\"cryptos\">\n      <div id=\"crypto-container\" *ngFor=\"let crypto of objectKeys(cryptos)\">\n        <div class=\"row\">\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span class=\"left\">{{crypto}}</span>\n          </div>\n\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span>{{cryptos[crypto].USD | currency:'USD':true}}</span>\n          </div>\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span>{{cryptos[crypto].INR | currency:'INR':true}}</span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n      <div class=\"container-fluid\">\n        <p class=\"navbar-text pull-right\">\n          <a [routerLink]=\"['/profile']\">\n            <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n          </a>\n        </p>\n\n      </div>\n    </nav>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -417,6 +422,93 @@ var _a;
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/wallet/wallet.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/wallet/wallet.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/apitest']\"\n           class=\"navbar-brand pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        Create Wallet\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n    <div class=\"row input-group\">\n      <input [(ngModel)]=\"searchText\"\n             type=\"text\"\n             class=\"form-control\"\n             name=\"searchText\"\n             placeholder=\"Enter a phrase using alphabets\"\n             autofocus>\n\n      <span class=\"input-group-btn\">\n         <a type=\"button\"\n            (click)=\"createWallet()\"\n            class=\"btn btn-default\">\n             <span class=\"glyphicon glyphicon-ok\"></span>\n         </a>\n      </span>\n    </div>\n    <div class=\"my-container row\" *ngIf=\"address\">\n      <br>\n      <label>Address</label>\n      <span>{{address}}</span>\n      <br>\n      <label>Private key</label>\n      <span>{{privatekey}}</span>\n    </div>\n\n    <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n      <div class=\"container-fluid\">\n        <p class=\"navbar-text pull-right\">\n          <a [routerLink]=\"['/profile']\">\n            <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n          </a>\n        </p>\n\n      </div>\n    </nav>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/wallet/wallet.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WalletComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_wallet_service_client__ = __webpack_require__("../../../../../src/app/services/wallet.service.client.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var WalletComponent = (function () {
+    function WalletComponent(walletService, route, router) {
+        this.walletService = walletService;
+        this.route = route;
+        this.router = router;
+    }
+    WalletComponent.prototype.ngOnInit = function () {
+    };
+    WalletComponent.prototype.createWallet = function () {
+        var _this = this;
+        // this.searchText = this.walletForm.value.searchText;
+        if (this.searchText === '') {
+            this.errorFlag = true;
+            return;
+        }
+        else {
+            this.walletService
+                .createWallet(this.searchText)
+                .subscribe(function (data) {
+                _this.address = data.wallet;
+                _this.privatekey = data.privatekey;
+                console.log(data);
+                // this.router.navigate(['/createwallet']);
+            });
+        }
+    };
+    return WalletComponent;
+}());
+WalletComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-wallet',
+        template: __webpack_require__("../../../../../src/app/components/wallet/wallet.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/wallet/wallet.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_wallet_service_client__["a" /* WalletService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_wallet_service_client__["a" /* WalletService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object])
+], WalletComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=wallet.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/website/website-list/website-list.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -505,7 +597,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var BittrexService = (function () {
     function BittrexService(http) {
         this.http = http;
-        this.urlBase = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=TEXT&tsyms=USD';
+        this.urlBase = 'https://min-api.cryptocompare.com/data/pricemulti?fsyms=TEXT&tsyms=INR,USD';
     }
     BittrexService.prototype.getPrices = function (searchText) {
         var _this = this;
@@ -659,6 +751,59 @@ TodoService = __decorate([
 
 var _a;
 //# sourceMappingURL=todo.service.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/wallet.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WalletService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var WalletService = (function () {
+    function WalletService(http, router) {
+        this.http = http;
+        this.router = router;
+        this.newUrl = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].baseUrl;
+    }
+    WalletService.prototype.createWallet = function (data) {
+        var obj = {
+            searchText: data
+        };
+        var url = this.newUrl + '/createwallet';
+        return this.http.post(url, obj)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    return WalletService;
+}());
+WalletService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], WalletService);
+
+var _a, _b;
+//# sourceMappingURL=wallet.service.client.js.map
 
 /***/ }),
 
@@ -939,9 +1084,14 @@ var Todo = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: true,
-    baseUrl: ''
+    production: false,
+    baseUrl: 'http://localhost:3100'
 };
 //# sourceMappingURL=environment.js.map
 

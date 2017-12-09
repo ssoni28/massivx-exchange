@@ -14,3 +14,8 @@ span.left {
 span.right {
   float: right;
 }
+
+span.rightest {
+  float: right;
+  margin-left: 10px;
+}
