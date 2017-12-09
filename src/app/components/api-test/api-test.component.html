@@ -1,0 +1,55 @@
+
+<div class="container-fluid">
+
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="row">
+      <div class="col-sm-1 col-md-1 col-lg-1">
+        <a [routerLink]=""
+           class="navbar-brand pull-left my-white-color">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11">
+        Test API
+      </div>
+    </div>
+  </nav>
+
+  <div class="my-container">
+
+    <div class="row input-group">
+      <input [(ngModel)]="searchText"
+             type="text"
+             class="form-control"
+             placeholder="Search"
+             autofocus>
+      <span class="input-group-btn">
+         <a (click)="searchCrypto()"
+            class="btn btn-default"
+            type="button">
+             <span class="glyphicon glyphicon-search"></span>
+         </a>
+      </span>
+    </div>
+
+      <div class="row" *ngIf="cryptos">
+        <div id="crypto-container" *ngFor="let crypto of objectKeys(cryptos)">
+          <span class="left">{{crypto}}</span>
+          <span class="right">{{cryptos[crypto].USD | currency:'USD':true}}</span>
+        </div>
+      </div>
+
+  </div>
+
+  <nav class="navbar navbar-custom navbar-fixed-bottom">
+    <div class="container-fluid">
+      <p class="navbar-text pull-right">
+        <a [routerLink]="['/profile']">
+          <span class="glyphicon glyphicon-user my-white-color"></span>
+        </a>
+      </p>
+
+    </div>
+  </nav>
+</div>

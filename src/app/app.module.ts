@@ -14,6 +14,8 @@ import { TodoEditComponent } from './todo-list/todo-edit.component';
 import {TodoService} from './services/todo.service.client';
 import { WebsiteListComponent } from './components/website/website-list/website-list.component';
 import {WebsiteService} from './services/website.service.client';
+import {BittrexService} from './services/bittrex.service.client';
+import { ApiTestComponent } from './components/api-test/api-test.component';
 
 @NgModule({
   // Declare components here
@@ -24,7 +26,8 @@ import {WebsiteService} from './services/website.service.client';
     TodoComponent,
     TodoListComponent,
     TodoEditComponent,
-    WebsiteListComponent
+    WebsiteListComponent,
+    ApiTestComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import {WebsiteService} from './services/website.service.client';
     Routing
   ],
   // Client Side services here
-  providers: [ TestService, TodoService, WebsiteService ],
+  providers: [ TestService, TodoService, WebsiteService, BittrexService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
