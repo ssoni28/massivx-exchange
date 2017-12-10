@@ -11,16 +11,24 @@ export class WalletService {
               private router: Router) {
   }
 
-  createWallet(data: any) {
+  createWallet(userId: String, data: any) {
     const obj = {
       searchText: data
     };
-    const url = this.newUrl + '/createwallet';
+    const url = this.newUrl + '/api/user/' + userId +'/createwallet';
     return this.http.post(url, obj)
       .map(
         (response: Response) => {
           return response.json();
         }
       );
+  }
+
+  findWalletsByUser(userId: String) {
+    const url = this.newUrl + '/api/user/' + userId + '/wallet';
+    return this.http.get(url)
+      .map((response: Response) => {
+        return response.json();
+      });
   }
 }

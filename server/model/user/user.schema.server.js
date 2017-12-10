@@ -7,7 +7,7 @@ var userSchema = mongoose.Schema({
   email: String,
   follows: [{type:mongoose.Schema.Types.ObjectId, ref: 'UserModel'}],
   followedBy: [{type:mongoose.Schema.Types.ObjectId, ref: 'UserModel'}],
-  bitcoinwallets: [{type: String}],
+  bitcoinwallets: [{type:mongoose.Schema.Types.ObjectId, ref: 'WalletModel'}],
   litecoinwallets: [{type:String}],
   roles: [{
     type: String,

@@ -14,18 +14,23 @@ import {ProfileComponent} from './components/user/profile/profile.component';
 import {AdminUserListComponent} from './components/admin-user-list/admin-user-list.component';
 import {AdminServiceClient} from './services/admin.service.client';
 import {AuthenticationService} from './services/authentication.service.client';
+import {MassivxComponent} from './components/massivx/massivx.component';
+import {WalletListComponent} from './components/wallet-list/wallet-list.component';
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
+  {path: 'home', component : HomeComponent},
   {path: 'login', component : LoginComponent},
   {path: 'register', component : RegisterComponent},
-  {path: 'user/:userId', component: ProfileComponent, canActivate: [AuthenticationService]},
+  {path: 'user/:userId', component: MassivxComponent, canActivate: [AuthenticationService]},
+  {path: 'user/:userId/profile', component: ProfileComponent, canActivate: [AuthenticationService]},
   {path: 'todo', component : TodoComponent},
   {path: 'todoList', component : TodoListComponent},
   {path: 'test', component: TestComponent},
   {path: 'website', component: WebsiteListComponent},
   {path: 'apitest', component: ApiTestComponent},
-  {path: 'createwallet', component: WalletComponent},
+  {path: 'user/:userId/createwallet', component: WalletComponent},
+  {path: 'user/:userId/wallet', component: WalletListComponent},
   {path: 'admin/user', component: AdminUserListComponent, canActivate: [AdminServiceClient] },
 
 ];

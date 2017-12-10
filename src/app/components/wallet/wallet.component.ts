@@ -12,6 +12,7 @@ export class WalletComponent implements OnInit {
 
   searchText: String;
   address: any;
+  userId: String;
   privatekey: any;
   errorFlag: boolean;
   constructor( private walletService: WalletService,
@@ -19,6 +20,11 @@ export class WalletComponent implements OnInit {
                private router: Router) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      if (params['userId']) {
+        this.userId = params['userId'];
+      }
+    });
   }
 
   createWallet() {
@@ -28,12 +34,12 @@ export class WalletComponent implements OnInit {
       return;
     } else {
       this.walletService
-        .createWallet(this.searchText)
+        .createWallet(this.userId, this.searchText)
         .subscribe((data) => {
-          this.address = data.wallet;
-          this.privatekey = data.privatekey;
+          this.address = data.address;
+          this.privatekey = data.privateKey;
           console.log(data);
-         // this.router.navigate(['/createwallet']);
+          this.router.navigate(['/user', this.userId, 'wallet']);
         });
     }
   }

@@ -26,6 +26,8 @@ import {SharedService} from './services/shared.service.client';
 import { AdminUserListComponent } from './components/admin-user-list/admin-user-list.component';
 import {AdminServiceClient} from './services/admin.service.client';
 import {AuthenticationService} from './services/authentication.service.client';
+import { MassivxComponent } from './components/massivx/massivx.component';
+import { WalletListComponent } from './components/wallet-list/wallet-list.component';
 
 @NgModule({
   // Declare components here
@@ -42,7 +44,9 @@ import {AuthenticationService} from './services/authentication.service.client';
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
-    AdminUserListComponent
+    AdminUserListComponent,
+    MassivxComponent,
+    WalletListComponent
   ],
   imports: [
     BrowserModule,
