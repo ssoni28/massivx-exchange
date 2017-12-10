@@ -18,6 +18,14 @@ import {BittrexService} from './services/bittrex.service.client';
 import { ApiTestComponent } from './components/api-test/api-test.component';
 import { WalletComponent } from './components/wallet/wallet.component';
 import {WalletService} from './services/wallet.service.client';
+import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { RegisterComponent } from './components/user/register/register.component';
+import {UserService} from './services/user.service.client';
+import {SharedService} from './services/shared.service.client';
+import { AdminUserListComponent } from './components/admin-user-list/admin-user-list.component';
+import {AdminServiceClient} from './services/admin.service.client';
+import {AuthenticationService} from './services/authentication.service.client';
 
 @NgModule({
   // Declare components here
@@ -30,7 +38,11 @@ import {WalletService} from './services/wallet.service.client';
     TodoEditComponent,
     WebsiteListComponent,
     ApiTestComponent,
-    WalletComponent
+    WalletComponent,
+    LoginComponent,
+    ProfileComponent,
+    RegisterComponent,
+    AdminUserListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +51,15 @@ import {WalletService} from './services/wallet.service.client';
     Routing
   ],
   // Client Side services here
-  providers: [ TestService, TodoService, WebsiteService, BittrexService, WalletService ],
+  providers: [ TestService,
+    TodoService,
+    SharedService,
+    UserService,
+    WebsiteService,
+    BittrexService,
+    WalletService,
+    AdminServiceClient,
+    AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

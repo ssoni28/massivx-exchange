@@ -8,15 +8,26 @@ import {TodoListComponent} from './todo-list/todo-list.component';
 import {WebsiteListComponent} from './components/website/website-list/website-list.component';
 import {ApiTestComponent} from './components/api-test/api-test.component';
 import {WalletComponent} from './components/wallet/wallet.component';
+import {LoginComponent} from './components/user/login/login.component';
+import {RegisterComponent} from './components/user/register/register.component';
+import {ProfileComponent} from './components/user/profile/profile.component';
+import {AdminUserListComponent} from './components/admin-user-list/admin-user-list.component';
+import {AdminServiceClient} from './services/admin.service.client';
+import {AuthenticationService} from './services/authentication.service.client';
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
+  {path: 'login', component : LoginComponent},
+  {path: 'register', component : RegisterComponent},
+  {path: 'user/:userId', component: ProfileComponent, canActivate: [AuthenticationService]},
   {path: 'todo', component : TodoComponent},
   {path: 'todoList', component : TodoListComponent},
   {path: 'test', component: TestComponent},
   {path: 'website', component: WebsiteListComponent},
   {path: 'apitest', component: ApiTestComponent},
-  {path: 'createwallet', component: WalletComponent}
+  {path: 'createwallet', component: WalletComponent},
+  {path: 'admin/user', component: AdminUserListComponent, canActivate: [AdminServiceClient] },
+
 ];
 
 // Export the routes as module providers

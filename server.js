@@ -1,7 +1,3 @@
-/**
- * Created by sesha on 6/2/17.
- */
-
 // Get the dependencies
 
 const express = require('express');
@@ -13,13 +9,17 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+app.use(cookieParser());
+app.use(session({ secret: 'choose a password' }));
 
-
+var passport = require('passport');
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Point static path to dist -- For building -- REMOVE
 app.use(express.static(path.join(__dirname, 'dist')));
-
-
 
 // CORS
 app.use(function(req, res, next) {
@@ -28,9 +28,6 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   next();
 });
-
-
-
 
 const port = process.env.PORT || '3100';
 app.set('port', port);
@@ -53,5 +50,3 @@ app.get('*', function (req, res) {
 });
 
 server.listen( port , () => console.log('Running'));
-
-

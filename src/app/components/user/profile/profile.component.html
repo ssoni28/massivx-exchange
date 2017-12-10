@@ -1,0 +1,84 @@
+
+<nav class="navbar navbar-custom navbar-fixed-top">
+
+  <div class="container-fluid">
+    <p class="navbar-header pull-left">
+      <a class="navbar-brand thick my-white-color">
+        <b>Profile</b>
+      </a>
+    </p>
+
+    <p class="navbar-text pull-right">
+      <a (click)="updateUser()"
+         class="navbar-link">
+        <span class="glyphicon glyphicon-ok my-white-color"></span>
+      </a>
+    </p>
+
+  </div>
+</nav>
+
+<div class="container my-container">
+
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input [(ngModel)]="username"
+           type="text"
+           class="form-control"
+           id="username"
+           placeholder="ssoni">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input [(ngModel)]="email"
+           type="email"
+           class="form-control"
+           id="email"
+           placeholder="soni.swati@outlook.com">
+  </div>
+
+  <div class="form-group">
+    <label for="first-name">First Name</label>
+    <input [(ngModel)]="firstName"
+           type="text"
+           class="form-control"
+           id="first-name"
+           placeholder="Swati">
+  </div>
+
+  <div class="form-group">
+    <label for="last-name">Last Name</label>
+    <input [(ngModel)]="lastName"
+           type="text"
+           class="form-control"
+           id="last-name"
+           placeholder="Soni">
+  </div>
+
+  <a class="btn btn-primary btn-block"
+     [routerLink]="['/user', userId, 'website']">Websites</a>
+
+  <a (click)="logout()"
+     class="btn btn-danger btn-block ">Logout</a>
+
+  <a class="btn btn-danger btn-block"
+     (click)="deleteUser()">Delete Account</a>
+
+  <a href="admin/user"
+     [hidden]=!isAdmin>
+    Users
+  </a>
+
+</div>
+
+<nav class="navbar navbar-custom navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a [routerLink]="['/profile']">
+        <span class="glyphicon glyphicon-user my-white-color"></span>
+      </a>
+    </p>
+  </div>
+</nav>
+
