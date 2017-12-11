@@ -63,18 +63,20 @@
              placeholder="Soni">
     </div>
 
-    <a class="btn btn-primary btn-block"
-       [routerLink]="['/user', userId, 'wallet']">My Wallets</a>
-
     <a (click)="logout()"
        class="btn btn-danger btn-block ">Logout</a>
 
     <a class="btn btn-danger btn-block"
        (click)="deleteUser()">Delete Account</a>
 
-    <a href="admin/user"
+    <a [routerLink]="['/user', userId, 'admin', 'user']"
        [hidden]=!isAdmin>
       Users
+    </a>
+
+    <a [routerLink]="['/user', userId, 'admin', 'newuser']"
+       [hidden]=!isAdmin>
+      New User
     </a>
 
   </div>

@@ -3,28 +3,20 @@
   <nav class="navbar navbar-custom navbar-fixed-top">
     <div class="row">
 
-      <div class="col-sm-1 col-md-1 col-lg-1">
-        <a [routerLink]="['/home']"
-           class="pull-left my-white-color navbar-brand">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-      </div>
-
-      <div class="navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2
-        hidden-xs hidden-sm">
+      <div class="navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3">
         MassivX
       </div>
 
       <div class="navbar-brand col-sm-5 col-md-5 col-lg-5">
         <a [routerLink]="['/user', userId,'createwallet']"
-           class="btn btn-danger pull-right my-white-color">
+           class="btn btn-success pull-right my-white-color">
           Create Wallet
         </a>
       </div>
 
-      <div class="navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3">
+      <div class="navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3">
         <a [routerLink]="['/user', userId,'wallet']"
-           class="btn btn-danger pull-right my-white-color">
+           class="btn btn-success pull-right my-white-color">
           My Wallets
         </a>
       </div>
@@ -32,9 +24,51 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="my-container">
 
-    
+    <div class="my-container row">
+
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <input [(ngModel)]="amount"
+               type="text"
+               class="form-control"
+               id="amount"
+               placeholder="YOU HAVE"/>
+      </div>
+
+      <div class="col-sm-1 col-md-1 col-lg-1">
+        <select>
+          <option *ngFor="let currency of currencies"
+          value="{{currency}}">
+            {{currency}}
+          </option>
+        </select>
+      </div>
+
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <input [(ngModel)]="exchange"
+               type="text"
+               class="form-control"
+               id="exchange"
+               placeholder="YOU GET"/>
+      </div>
+
+      <div class="col-sm-1 col-md-1 col-lg-1">
+        <select>
+          <option *ngFor="let currency of currencies"
+                  value="{{currency}}">
+            {{currency}}
+          </option>
+        </select>
+      </div>
+
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <a (click)="exchange()"
+           class="btn btn-success btn-block">Exchange</a>
+      </div>
+
+    </div>
+
   </div>
 
   <nav class="navbar navbar-custom navbar-fixed-bottom">

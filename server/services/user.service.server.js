@@ -10,13 +10,14 @@ module.exports = function(app) {
   var bcrypt = require("bcrypt-nodejs");
 
   app.post("/api/user", createUser);
+  app.post("/api/user/:userId/admin/newuser", createNewUser);
   app.put("/api/user/:userId", updateUser);
   app.get("/api/user/:userId", findUserById);
   app.get("/api/user", findUser);
   app.delete("/api/user/:userId", deleteUser);
   app.post('/api/register', register);
   app.post('/api/login', passport.authenticate('local'), login);
-  app.get('/api/admin/user',checkIsAdmin, findAllUsers);
+  app.get('/api/user/:userId/admin/user',checkIsAdmin, findAllUsers);
   app.get('/api/admin/isAdmin', isAdmin);
   app.post('/api/loggedIn', loggedIn);
   app.post('/api/logout', logout);
@@ -91,6 +92,8 @@ module.exports = function(app) {
   }
 
   function findAllUsers(req, res) {
+    var user = req.body;
+    var userId = user._id;
     userModel
       .findAllUsers()
       .then(function (users) {
@@ -112,6 +115,16 @@ module.exports = function(app) {
   }
 
   function createUser(req, res) {
+    userModel
+      .createUser(req.body)
+      .then(function (user){
+        res.json(user);
+      }, function(err) {
+        res.status(400).send(err);
+      });
+  }
+
+  function createNewUser(req, res) {
     userModel
       .createUser(req.body)
       .then(function (user){

@@ -1,0 +1,79 @@
+<div class="container-fluid">
+
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="row">
+
+      <div class="navbar-brand col-sm-1 col-md-1 col-lg-1">
+        <a [routerLink]="['/user', userId, '/profile']"
+           class="pull-left my-white-color">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11">
+        Create New User
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div *ngIf="errorFlag"
+         class="alert alert-danger">
+      {{errorMsg}}
+    </div>
+
+    <h1>Register</h1>
+    <form (ngSubmit) = "register()" #f="ngForm">
+
+      <input placeholder="username"
+             name="username"
+             type="text"
+             class="form-control"
+             ngModel
+             required
+             #username="ngModel"/>
+
+      <span class="help-block" *ngIf="!username.valid && username.touched">Please enter username!</span>
+
+      <input name="password"
+             placeholder="password"
+             type="password"
+             class="form-control"
+             ngModel
+             required
+             #password="ngModel"/>
+      <span class="help-block" *ngIf="!password.valid && password.touched">Please enter password!</span>
+
+
+      <input name = "verifyPassword"
+             placeholder="verify password"
+             type="password"
+             class="form-control"
+             ngModel
+             required
+             #verifyPassword="ngModel"/>
+      <span class="help-block" *ngIf="!verifyPassword.valid && verifyPassword.touched">Please verify password!</span>
+
+      <select class="form-control"
+              ngModel
+              name="roles"
+              #role="ngModel">
+        <option value="EXCHANGEUSER">EXCHANGEUSER</option>
+        <option value="SUPPORTUSER">SUPPORTUSER</option>
+      </select>
+
+      <button class="btn btn-primary btn-block"
+              type="submit"
+              [disabled]="!f.valid">Register</button>
+
+
+      <button class="btn btn-danger btn-block"
+              type="button"
+              (click)="cancel()">Cancel</button>
+
+    </form>
+
+  </div>
+
+</div>

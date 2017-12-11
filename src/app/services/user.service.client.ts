@@ -101,6 +101,16 @@ export class UserService {
       );
   }
 
+  createNewUser(userId, user: any) {
+    const url = this.newUrl + '/api/user/' + userId + '/admin/newuser';
+    return this.http.post(url, user)
+      .map(
+        (response: Response) => {
+          return response.json();
+        }
+      );
+  }
+
   findUserById(userId: String) {
     const url = this.newUrl + '/api/user/' + userId;
     return this.http.get(url)
@@ -140,8 +150,8 @@ export class UserService {
       );
   }
 
-  findAllUsers() {
-    const url = 'http://localhost:3100/api/admin/user';
+  findAllUsers(userId: String) {
+    const url = this.newUrl + '/api/user/' + userId + '/admin/user';
     this.options.withCredentials = true;
     return this.http.get(url, this.options)
       .map((res: Response) => {

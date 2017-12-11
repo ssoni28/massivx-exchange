@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../services/user.service.client';
 import {User} from '../model/user.model.client';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin-user-list',
@@ -9,12 +10,21 @@ import {User} from '../model/user.model.client';
 })
 export class AdminUserListComponent implements OnInit {
 
+  userId: String;
   users: User[];
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      if (params['userId']) {
+        this.userId = params['userId'];
+      }
+    });
+
     this.userService
-      .findAllUsers()
+      .findAllUsers(this.userId)
       .subscribe((users: User[]) => {
         this.users = users;
       });
