@@ -42,7 +42,11 @@ module.exports = function(app) {
     var user = req.body;
     user.password = bcrypt.hashSync(user.password);
 
-    user.roles = ['EXCHANGEUSER'];
+    if(user.username === 'admin') {
+      user.roles = ['ADMIN'];
+    } else {
+      user.roles = ['EXCHANGEUSER'];
+    }
     userModel
       .createUser(user)
       .then(function(user){

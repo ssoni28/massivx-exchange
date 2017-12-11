@@ -11,7 +11,6 @@ var userSchema = mongoose.Schema({
   litecoinwallets: [{type:String}],
   roles: [{
     type: String,
-    default: 'EXCHANGEUSER',
     enum: ['ADMIN', 'EXCHANGEUSER', 'SUPPORTUSER']
   }]
 }, {collection: 'user'});
