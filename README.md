@@ -1,44 +1,60 @@
-# AngularFourMEANSeed
+Welcome to the [massive-exchange](https://github.com/ssoni28/massivx-exchange) wiki!
 
-After you clone this repository and run "npm install"
-To start the project
-Open two terminals, One to start the front end, One to start the backend
+# **Introduction** **Swati Soni**
 
-~ npm start
+My name is Swati Soni. I am a Computer Science graduate student at Northeastern University. This repository is dedicated to the assignments of Fall 2017 class of CS5610 Web Development. You can find my resume here.
 
+***
+## GitHub Repositories
 
-~ nodemon server.js
+I am using the following two repositories for the projects and assignments of this course:
+* https://github.com/ssoni28/webdev-soni-swati
+* https://github.com/ssoni28/massivx-exchange
 
-Front end will run on `http://localhost:4200/`
-Server will run on port 3100. Specified in server.js and in environment.ts files
+***
+## Assignments
+The course assignments are hosted on Heroku https://webdev-soni-swati.herokuapp.com/. These are releases for all assignments:
+* Assignment1 https://github.com/ssoni28/webdev-soni-swati/releases/tag/v1.1
+* Assignemnt2 https://github.com/ssoni28/webdev-soni-swati/releases/tag/v1.0
+* Assignemnt3 https://github.com/ssoni28/webdev-soni-swati/releases/tag/v3.7
+* Assignemnt4 https://github.com/ssoni28/webdev-soni-swati/releases/tag/v4.1
+* Assignemnt5 https://github.com/ssoni28/webdev-soni-swati/releases/tag/v5.0
+* Assignemnt6 https://github.com/ssoni28/webdev-soni-swati/releases/tag/v6.0
 
+***
 
+## Project
+### Title: MASSIVEX
 
+### Description
+MASSIVEX, a web application, is a cryptocurrency exchange platform that will allow the exchange of one type of cryptocurrency into other. With a simple register and secured login process, a user will be able to create a brain wallet and easily trade a leading blockchain asset for other. This project is a Single Page Application built using MEAN stack, HTML5, CSS3 and some external APIs.
 
+### Problem Statement
+With the invention of cryptocurrency and new assets being mined, there is a call for a platform which can easily convert one asset into other. As we know, the exchange rates keep on changing and the value of a particular type of asset is also fluctuating every moment depending on the market. In such scenarios, people prefer to convert their current assets to some other which might benefit them in present or future. Here, the requirement is to build a secure system which will provide an easy way of exchanging assets, buy and sell blockchain assets, get notified and assisted in real time.
 
+### Proposed Solution
+MASSIVEX is the solution for the above-stated problem. This is a web application serving the purpose of exchanging cryptocurrency in simple steps. This application will server following functions:
 
+* Exchange leading blockchain assets and tokens
+* Buy new assets
+* Sell assets
+* Real-time support to users by live chat
+* Real-time exchange rate updates
+* 24-hour statistics will add transparency and will also help users to understand the trend
 
-## Development server
+***
+### Wiki Web Page Links
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Project Web Page Link: https://github.com/ssoni28/webdev-soni-swati/wiki/Project
+* Design Web Page Link: https://github.com/ssoni28/massivx-exchange/wiki/Design
+* POC Web page Link: https://github.com/ssoni28/massivx-exchange/wiki/POC
+* Prototype Web Page Link: https://github.com/ssoni28/massivx-exchange/wiki/Prototype
+* Testing Web Page Link: https://github.com/ssoni28/massivx-exchange/wiki/Testing
 
-## Code scaffolding
+***
+### Project Heroku Link
+https://massivx-exchange.herokuapp.com/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+***
+### Project Release Link
+https://github.com/ssoni28/massivx-exchange/releases
