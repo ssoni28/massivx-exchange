@@ -17,6 +17,7 @@ import {AuthenticationService} from './services/authentication.service.client';
 import {MassivxComponent} from './components/massivx/massivx.component';
 import {WalletListComponent} from './components/wallet-list/wallet-list.component';
 import {CreateUserComponent} from './components/create-user/create-user.component';
+import {AdminUserUpdateComponent} from './components/admin/admin-user-update/admin-user-update.component';
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -34,7 +35,7 @@ const APP_ROUTES: Routes = [
   {path: 'user/:userId/wallet', component: WalletListComponent},
   {path: 'user/:userId/admin/user', component: AdminUserListComponent, canActivate: [AdminServiceClient] },
   {path: 'user/:userId/admin/newuser', component: CreateUserComponent, canActivate: [AdminServiceClient] },
-
+  {path: 'user/:userId/admin/updateuser/:exuserId/profile', component: AdminUserUpdateComponent, canActivate: [AdminServiceClient]}
 ];
 
 // Export the routes as module providers

@@ -5,14 +5,14 @@
     <div class="row">
 
       <div class="navbar-brand col-sm-1 col-md-1 col-lg-1">
-        <a [routerLink]="['/user', userId]"
+        <a [routerLink]="['/user', userId, 'admin', 'user']"
            class="pull-left my-white-color">
           <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
       </div>
 
       <div class="navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2">
-        Profile
+        Update User
       </div>
       <div class="navbar-brand col-sm-9 col-md-9 col-lg-9">
         <a (click)="updateUser()"
@@ -63,34 +63,15 @@
              placeholder="Soni">
     </div>
 
-    <a (click)="logout()"
-       class="btn btn-danger btn-block ">Logout</a>
-
     <a class="btn btn-danger btn-block"
        (click)="deleteUser()">Delete Account</a>
 
-    <div class="my-container">
-      <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-6">
-          <a [routerLink]="['/user', userId, 'admin', 'user']"
-             [hidden]=!isAdmin>
-            Users
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-6">
-          <a [routerLink]="['/user', userId, 'admin', 'newuser']"
-             [hidden]=!isAdmin>
-            New User
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 
   <nav class="navbar navbar-custom navbar-fixed-bottom">
     <div class="container-fluid">
       <p class="navbar-text pull-right">
-        <a [routerLink]="['/user', userId, 'profile']">
+        <a [routerLink]="['/user', userId, 'profile']">>
           <span class="glyphicon glyphicon-user my-white-color"></span>
         </a>
       </p>

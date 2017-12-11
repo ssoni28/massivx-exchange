@@ -130,8 +130,29 @@ export class UserService {
         }
       );
   }
+
+  updateExUser(exuserId: String, userId: String, user: any) {
+    const url = this.newUrl + '/api/user/' + userId + '/admin/updateuser/' + exuserId + '/profile';
+    return this.http.put(url, user)
+      .map(
+        (response: Response) => {
+          return response.json();
+        }
+      );
+  }
+
   deleteUser(userId: String) {
     const url = this.newUrl + '/api/user/' + userId;
+    return this.http.delete(url)
+      .map(
+        (response: Response) => {
+          return response.json();
+        }
+      );
+  }
+
+  deleteExUser(exuserId: String, userId: String) {
+    const url = this.newUrl + '/api/user/' + userId + '/admin/updateuser/' + exuserId + '/profile';
     return this.http.delete(url)
       .map(
         (response: Response) => {

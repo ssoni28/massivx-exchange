@@ -1,7 +1,43 @@
-<h1>User List</h1>
+<div class="container-fluid">
 
-<ul>
-  <li *ngFor="let user of users">
-    {{user.username}}
-  </li>
-</ul>
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="row">
+
+      <div class="navbar-brand col-sm-1 col-md-1 col-lg-1">
+        <a [routerLink]="['/user', userId]"
+           class="pull-left my-white-color">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11">
+        User List
+      </div>
+    </div>
+  </nav>
+
+  <div class="my-container">
+    <ul class="list-group">
+      <li *ngFor="let user of users"
+          class="list-group-custom-item">
+        {{user.username}}
+        <a class="pull-right"
+           [routerLink]="['/user', userId, 'admin', 'updateuser', user._id, 'profile']">
+          <span class="glyphicon glyphicon-cog"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <nav class="navbar navbar-custom navbar-fixed-bottom">
+    <div class="container-fluid">
+      <p class="navbar-text pull-right">
+        <a [routerLink]="['/user', userId, 'profile']">
+          <span class="glyphicon glyphicon-user my-white-color"></span>
+        </a>
+      </p>
+    </div>
+  </nav>
+
+</div>

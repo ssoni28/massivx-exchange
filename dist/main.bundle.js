@@ -109,12 +109,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_massivx_massivx_component__ = __webpack_require__("../../../../../src/app/components/massivx/massivx.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_wallet_list_wallet_list_component__ = __webpack_require__("../../../../../src/app/components/wallet-list/wallet-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_create_user_create_user_component__ = __webpack_require__("../../../../../src/app/components/create-user/create-user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_admin_admin_user_update_admin_user_update_component__ = __webpack_require__("../../../../../src/app/components/admin/admin-user-update/admin-user-update.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -169,7 +171,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_24__components_admin_user_list_admin_user_list_component__["a" /* AdminUserListComponent */],
             __WEBPACK_IMPORTED_MODULE_27__components_massivx_massivx_component__["a" /* MassivxComponent */],
             __WEBPACK_IMPORTED_MODULE_28__components_wallet_list_wallet_list_component__["a" /* WalletListComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__components_create_user_create_user_component__["a" /* CreateUserComponent */]
+            __WEBPACK_IMPORTED_MODULE_29__components_create_user_create_user_component__["a" /* CreateUserComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__components_admin_admin_user_update_admin_user_update_component__["a" /* AdminUserUpdateComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -217,6 +220,8 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_massivx_massivx_component__ = __webpack_require__("../../../../../src/app/components/massivx/massivx.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_wallet_list_wallet_list_component__ = __webpack_require__("../../../../../src/app/components/wallet-list/wallet-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_create_user_create_user_component__ = __webpack_require__("../../../../../src/app/components/create-user/create-user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_admin_admin_user_update_admin_user_update_component__ = __webpack_require__("../../../../../src/app/components/admin/admin-user-update/admin-user-update.component.ts");
+
 
 
 
@@ -250,6 +255,7 @@ var APP_ROUTES = [
     { path: 'user/:userId/wallet', component: __WEBPACK_IMPORTED_MODULE_15__components_wallet_list_wallet_list_component__["a" /* WalletListComponent */] },
     { path: 'user/:userId/admin/user', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_user_list_admin_user_list_component__["a" /* AdminUserListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_admin_service_client__["a" /* AdminServiceClient */]] },
     { path: 'user/:userId/admin/newuser', component: __WEBPACK_IMPORTED_MODULE_16__components_create_user_create_user_component__["a" /* CreateUserComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_admin_service_client__["a" /* AdminServiceClient */]] },
+    { path: 'user/:userId/admin/updateuser/:exuserId/profile', component: __WEBPACK_IMPORTED_MODULE_17__components_admin_admin_user_update_admin_user_update_component__["a" /* AdminUserUpdateComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_admin_service_client__["a" /* AdminServiceClient */]] }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forRoot(APP_ROUTES);
@@ -278,7 +284,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/admin-user-list/admin-user-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>User List</h1>\n\n<ul>\n  <li *ngFor=\"let user of users\">\n    {{user.username}}\n  </li>\n</ul>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        User List\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n    <ul class=\"list-group\">\n      <li *ngFor=\"let user of users\"\n          class=\"list-group-custom-item\">\n        {{user.username}}\n        <a class=\"pull-right\"\n           [routerLink]=\"['/user', userId, 'admin', 'updateuser', user._id, 'profile']\">\n          <span class=\"glyphicon glyphicon-cog\"></span>\n        </a>\n      </li>\n    </ul>\n  </div>\n\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
 
 /***/ }),
 
@@ -334,6 +340,137 @@ AdminUserListComponent = __decorate([
 
 var _a, _b, _c;
 //# sourceMappingURL=admin-user-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/admin/admin-user-update/admin-user-update.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/admin/admin-user-update/admin-user-update.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'admin', 'user']\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        Update User\n      </div>\n      <div class=\"navbar-brand col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"updateUser()\"\n           class=\"pull-right my-white-color\">\n          <span class=\"glyphicon glyphicon-ok my-white-color\"></span>\n        </a>\n      </div>\n\n\n    </div>\n  </nav>\n\n  <div class=\"container my-container\">\n\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"username\"\n             placeholder=\"ssoni\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"email\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             placeholder=\"soni.swati@outlook.com\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"first-name\"\n             placeholder=\"Swati\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             placeholder=\"Soni\">\n    </div>\n\n    <a class=\"btn btn-danger btn-block\"\n       (click)=\"deleteUser()\">Delete Account</a>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">>\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/admin/admin-user-update/admin-user-update.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminUserUpdateComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var AdminUserUpdateComponent = (function () {
+    function AdminUserUpdateComponent(userService, sharedService, route, router) {
+        this.userService = userService;
+        this.sharedService = sharedService;
+        this.route = route;
+        this.router = router;
+        this.errorMsg = 'Invalid username or password!';
+    }
+    AdminUserUpdateComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params['userId']) {
+                _this.userId = params['userId'];
+            }
+            if (params['exuserId']) {
+                _this.exuserId = params['exuserId'];
+            }
+        });
+        this.getUser();
+        this.getExUser();
+    };
+    AdminUserUpdateComponent.prototype.getUser = function () {
+        var _this = this;
+        this.userService.findUserById(this.userId)
+            .subscribe(function (currentUser) {
+            _this.user = currentUser;
+        });
+    };
+    AdminUserUpdateComponent.prototype.getExUser = function () {
+        var _this = this;
+        this.userService.findUserById(this.exuserId)
+            .subscribe(function (currentUser) {
+            _this.exuser = currentUser;
+            _this.username = currentUser.username;
+            _this.firstName = currentUser.firstName;
+            _this.lastName = currentUser.lastName;
+            _this.email = currentUser.email;
+            _this.roles = currentUser.roles;
+            _this.isAdmin = _this.getRole();
+        });
+    };
+    AdminUserUpdateComponent.prototype.getRole = function () {
+        for (var _i = 0, _a = this.roles; _i < _a.length; _i++) {
+            var role = _a[_i];
+            if (role === 'ADMIN') {
+                return true;
+            }
+            return false;
+        }
+    };
+    AdminUserUpdateComponent.prototype.updateUser = function () {
+        var _this = this;
+        this.exuser.username = this.username;
+        this.exuser.firstName = this.firstName;
+        this.exuser.lastName = this.lastName;
+        this.exuser.email = this.email;
+        this.userService.updateExUser(this.exuserId, this.userId, this.exuser)
+            .subscribe(function (data) {
+            _this.router.navigate(['/user', _this.userId, 'admin', 'user']);
+        });
+    };
+    AdminUserUpdateComponent.prototype.deleteUser = function () {
+        var _this = this;
+        this.userService.deleteExUser(this.exuserId, this.userId)
+            .subscribe(function (data) {
+            _this.router.navigate(['/user', _this.userId, 'admin', 'user']);
+        });
+    };
+    return AdminUserUpdateComponent;
+}());
+AdminUserUpdateComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-admin-user-update',
+        template: __webpack_require__("../../../../../src/app/components/admin/admin-user-update/admin-user-update.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/admin/admin-user-update/admin-user-update.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__["a" /* SharedService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _d || Object])
+], AdminUserUpdateComponent);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=admin-user-update.component.js.map
 
 /***/ }),
 
@@ -530,7 +667,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "scene {\n  background-color: lawngreen;\n}\n", ""]);
+exports.push([module.i, ".scene {\n  background-color: black;\n  width:100%;\n  height: 100%;\n  position: fixed;\n  top:0px;\n  left:0px;\n  z-index:1000;\n}\n\n.textscene {\n  color: white;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -543,7 +680,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\"\n     style=\"background-color: black;\nwidth:100%;\nheight: 100%;\nposition: fixed;\ntop:0px;\nleft:0px;\nz-index:1000;\">\n\n\n  <div class=\"my-container\" style=\"text-align: center\">\n    <div class=\"row\">\n      <h1 style=\"color: white\">MASSIVX</h1>\n    </div>\n  </div>\n\n  <div class=\"my-container\" style=\"text-align: center\">\n    <div class=\"row\">\n      <p style=\"color: white;margin-right: 20px;margin-right: 20px; align-content: center\">MassivX, a web application, is a cryptocurrency exchange platform that allows the exchange of one type of cryptocurrency into other. With a simple register and secured login process, a user will be able to easily trade any leading blockchain asset for other.</p>\n    </div>\n\n    <div class=\"row\" style=\"text-align: center\">\n      <h4>\n        <a routerLink=\"/apitest\" style=\"align-content: center\">Search Market Rate</a>\n      </h4>\n    </div>\n    \n    <div class=\"row\" style=\"text-align: center\">\n      <h4>\n        <a routerLink=\"/login\"style=\"align-content: center\">Login</a>\n      </h4>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"container-fluid scene\">\n\n  <div class=\"my-container textscene\" >\n    <div class=\"row\">\n      <h1>MASSIVX</h1>\n    </div>\n  </div>\n\n  <div class=\"my-container textscene\">\n    <div class=\"row\">\n      <p>MassivX, a web application, is a cryptocurrency exchange platform that allows the exchange of one type of cryptocurrency into other. With a simple register and secured login process, a user will be able to easily trade any leading blockchain asset for other.</p>\n    </div>\n\n    <div class=\"row textscene\">\n      <h4>\n        <a routerLink=\"/apitest\">Search Market Rate</a>\n      </h4>\n    </div>\n\n    <div class=\"row\">\n      <h4>\n        <a routerLink=\"/login\">Login</a>\n      </h4>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -892,7 +1029,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        Profile\n      </div>\n      <div class=\"navbar-brand col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"updateUser()\"\n           class=\"pull-right my-white-color\">\n          <span class=\"glyphicon glyphicon-ok my-white-color\"></span>\n        </a>\n      </div>\n\n\n    </div>\n  </nav>\n\n  <div class=\"container my-container\">\n\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"username\"\n             placeholder=\"ssoni\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"email\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             placeholder=\"soni.swati@outlook.com\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"first-name\"\n             placeholder=\"Swati\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             placeholder=\"Soni\">\n    </div>\n\n    <a (click)=\"logout()\"\n       class=\"btn btn-danger btn-block \">Logout</a>\n\n    <a class=\"btn btn-danger btn-block\"\n       (click)=\"deleteUser()\">Delete Account</a>\n\n    <a [routerLink]=\"['/user', userId, 'admin', 'user']\"\n       [hidden]=!isAdmin>\n      Users\n    </a>\n\n    <a [routerLink]=\"['/user', userId, 'admin', 'newuser']\"\n       [hidden]=!isAdmin>\n      New User\n    </a>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n</div>\n\n"
+module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        Profile\n      </div>\n      <div class=\"navbar-brand col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"updateUser()\"\n           class=\"pull-right my-white-color\">\n          <span class=\"glyphicon glyphicon-ok my-white-color\"></span>\n        </a>\n      </div>\n\n\n    </div>\n  </nav>\n\n  <div class=\"container my-container\">\n\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"username\"\n             placeholder=\"ssoni\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"email\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             placeholder=\"soni.swati@outlook.com\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"first-name\"\n             placeholder=\"Swati\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             placeholder=\"Soni\">\n    </div>\n\n    <a (click)=\"logout()\"\n       class=\"btn btn-danger btn-block \">Logout</a>\n\n    <a class=\"btn btn-danger btn-block\"\n       (click)=\"deleteUser()\">Delete Account</a>\n\n    <div class=\"my-container\">\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-6 col-lg-6\">\n          <a [routerLink]=\"['/user', userId, 'admin', 'user']\"\n             [hidden]=!isAdmin>\n            Users\n          </a>\n        </div>\n        <div class=\"col-sm-6 col-md-6 col-lg-6\">\n          <a [routerLink]=\"['/user', userId, 'admin', 'newuser']\"\n             [hidden]=!isAdmin>\n            New User\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n</div>\n\n"
 
 /***/ }),
 
@@ -1752,8 +1889,22 @@ var UserService = (function () {
             return response.json();
         });
     };
+    UserService.prototype.updateExUser = function (exuserId, userId, user) {
+        var url = this.newUrl + '/api/user/' + userId + '/admin/updateuser/' + exuserId + '/profile';
+        return this.http.put(url, user)
+            .map(function (response) {
+            return response.json();
+        });
+    };
     UserService.prototype.deleteUser = function (userId) {
         var url = this.newUrl + '/api/user/' + userId;
+        return this.http.delete(url)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    UserService.prototype.deleteExUser = function (exuserId, userId) {
+        var url = this.newUrl + '/api/user/' + userId + '/admin/updateuser/' + exuserId + '/profile';
         return this.http.delete(url)
             .map(function (response) {
             return response.json();
@@ -2140,9 +2291,14 @@ var Todo = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: true,
-    baseUrl: ''
+    production: false,
+    baseUrl: 'http://localhost:3100'
 };
 //# sourceMappingURL=environment.js.map
 

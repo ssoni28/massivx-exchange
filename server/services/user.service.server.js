@@ -12,9 +12,11 @@ module.exports = function(app) {
   app.post("/api/user", createUser);
   app.post("/api/user/:userId/admin/newuser", createNewUser);
   app.put("/api/user/:userId", updateUser);
+  app.put("/api/user/:userId/admin/updateuser/:exuserId/profile", updateExUser);
   app.get("/api/user/:userId", findUserById);
   app.get("/api/user", findUser);
   app.delete("/api/user/:userId", deleteUser);
+  app.delete("/api/user/:userId/admin/updateuser/:exuserId/profile", deleteExUser);
   app.post('/api/register', register);
   app.post('/api/login', passport.authenticate('local'), login);
   app.get('/api/user/:userId/admin/user',checkIsAdmin, findAllUsers);
@@ -148,8 +150,27 @@ module.exports = function(app) {
       });
   }
 
+  function updateExUser(req, res) {
+    var updatedUser = req.body;
+    var userId = req.params['exuserId'];
+    userModel
+      .updateUser(userId, updatedUser)
+      .then(function (updatedUser) {
+        res.json(updatedUser);
+      });
+  }
+
   function deleteUser(req, res) {
     var userId = req.params['userId'];
+    userModel
+      .deleteUser(userId)
+      .then(function (user) {
+        res.json(user);
+      });
+  }
+
+  function deleteExUser(req, res) {
+    var userId = req.params['exuserId'];
     userModel
       .deleteUser(userId)
       .then(function (user) {

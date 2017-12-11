@@ -29,6 +29,7 @@ import {AuthenticationService} from './services/authentication.service.client';
 import { MassivxComponent } from './components/massivx/massivx.component';
 import { WalletListComponent } from './components/wallet-list/wallet-list.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
+import { AdminUserUpdateComponent } from './components/admin/admin-user-update/admin-user-update.component';
 
 @NgModule({
   // Declare components here
@@ -48,7 +49,8 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
     AdminUserListComponent,
     MassivxComponent,
     WalletListComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    AdminUserUpdateComponent
   ],
   imports: [
     BrowserModule,
