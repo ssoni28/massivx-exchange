@@ -2,7 +2,7 @@ Welcome to the [massive-exchange](https://github.com/ssoni28/massivx-exchange) w
 
 # **Introduction** **Swati Soni**
 
-My name is Swati Soni. I am a Computer Science graduate student at Northeastern University. This repository is dedicated to the assignments of Fall 2017 class of CS5610 Web Development. You can find my resume here.
+My name is Swati Soni. I am a Computer Science graduate student at Northeastern University. This repository is dedicated to the assignments of Fall 2017 class of CS5610 Web Development. You can find my resume [here](https://github.com/ssoni28/massivx-exchange/blob/master/src/assets/SwatiSoniResume.pdf).
 
 ***
 ## GitHub Repositories
