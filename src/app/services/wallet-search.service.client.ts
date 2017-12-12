@@ -16,4 +16,12 @@ export class WalletSearchServiceClient {
       .map(result =>
         this.result = result.json());
   }
+
+  getStats() {
+    const url ="https://cors-anywhere.herokuapp.com/" + "https://api.blockchain.info/stats";
+    console.log(url);
+    return this.http.get(url)
+      .map(result =>
+        this.result = result.json());
+  }
 }

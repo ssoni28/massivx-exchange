@@ -5,6 +5,7 @@ import {SharedService} from '../../services/shared.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BittrexService} from '../../services/bittrex.service.client';
 import {User} from '../../models/user.model.client';
+import {WalletSearchServiceClient} from '../../services/wallet-search.service.client';
 
 @Component({
   selector: 'app-massivx',
@@ -22,10 +23,10 @@ export class MassivxComponent implements OnInit {
   email: String;
   roles: String[];
   isAdmin: boolean;
-  coins: any;
 
+  stats: any;
   constructor(private userService: UserService,
-              private sharedService: SharedService,
+              private walletService: WalletSearchServiceClient,
               private data: BittrexService,
               private route: ActivatedRoute,
               private router: Router) { }
@@ -39,14 +40,14 @@ export class MassivxComponent implements OnInit {
 
     this.getUser();
 
-    this.getCoins();
+    this.getStats();
   }
 
-  getCoins() {
-    this.data.getCoins()
-      .subscribe(res => {
-        this.coins = res;
-        console.log(res);
+  getStats() {
+    this.walletService.getStats()
+      .subscribe((data: any) => {
+        this.stats = data;
+        console.log(data);
       });
   }
 

@@ -774,7 +774,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".my-margin {\n  margin-top: 50px;\n}\n", ""]);
+exports.push([module.i, ".my-margin {\n  margin-top: 50px;\n}\n\n.my-align {\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -787,7 +787,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/massivx/massivx.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId, 'apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container my-margin\">\n\n    <div class=\"my-container row\">\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"amount\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"amount\"\n               placeholder=\"YOU HAVE\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n          value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"exchange\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"exchange\"\n               placeholder=\"YOU GET\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n                  value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-2 col-md-2 col-lg-2\">\n        <a (click)=\"exchange()\"\n           class=\"btn btn-success btn-block\">Exchange</a>\n      </div>\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId, 'apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container my-margin\">\n\n    <div class=\"my-container row\">\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"amount\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"amount\"\n               placeholder=\"YOU HAVE\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n                  value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"exchange\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"exchange\"\n               placeholder=\"YOU GET\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n                  value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-2 col-md-2 col-lg-2\">\n        <a (click)=\"exchange()\"\n           class=\"btn btn-success btn-block\">Exchange</a>\n      </div>\n\n    </div>\n\n\n    <div class=\" container my-container row\">\n\n      <div class=\"row my-align\">\n        <h1>Bitcoin 24 hour Stats</h1>\n      </div>\n\n      <div class=\"row\">\n        <div class=\"col-xs-6\">\n\n          <div class=\"row my-align\">\n            <label>Block Summary</label>\n          </div>\n          <hr>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Blocks Mined</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>{{stats.n_blocks_mined}}</label>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Time Between Blocks</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>{{stats.minutes_between_blocks}}</label>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Bitcoins Mined</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>{{stats.n_btc_mined}}</label>\n            </div>\n          </div>\n\n        </div>\n\n\n        <div class=\"col-xs-6\">\n\n          <div class=\"row my-align\">\n            <label>Market Summary</label>\n          </div>\n          <hr>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Market Price</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>\n                {{stats.market_price_usd}}\n              </label>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Trade Volume</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>\n                {{stats.trade_volume_usd}}  USD\n              </label>\n            </div>\n          </div>\n\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Trade Volume</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>\n                {{stats.trade_volume_btc}}  BTC\n              </label>\n            </div>\n          </div>\n        </div>\n\n\n      </div>\n\n    </div>\n\n    <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n      <div class=\"container-fluid\">\n        <p class=\"navbar-text pull-right\">\n          <a [routerLink]=\"['/user', userId, 'profile']\">\n            <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n          </a>\n        </p>\n      </div>\n    </nav>\n\n\n\n  </div>\n"
 
 /***/ }),
 
@@ -798,9 +798,9 @@ module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navba
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MassivxComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_bittrex_service_client__ = __webpack_require__("../../../../../src/app/services/bittrex.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_bittrex_service_client__ = __webpack_require__("../../../../../src/app/services/bittrex.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_wallet_search_service_client__ = __webpack_require__("../../../../../src/app/services/wallet-search.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -816,9 +816,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MassivxComponent = (function () {
-    function MassivxComponent(userService, sharedService, data, route, router) {
+    function MassivxComponent(userService, walletService, data, route, router) {
         this.userService = userService;
-        this.sharedService = sharedService;
+        this.walletService = walletService;
         this.data = data;
         this.route = route;
         this.router = router;
@@ -831,14 +831,14 @@ var MassivxComponent = (function () {
             }
         });
         this.getUser();
-        this.getCoins();
+        this.getStats();
     };
-    MassivxComponent.prototype.getCoins = function () {
+    MassivxComponent.prototype.getStats = function () {
         var _this = this;
-        this.data.getCoins()
-            .subscribe(function (res) {
-            _this.coins = res;
-            console.log(res);
+        this.walletService.getStats()
+            .subscribe(function (data) {
+            _this.stats = data;
+            console.log(data);
         });
     };
     MassivxComponent.prototype.getUser = function () {
@@ -871,7 +871,7 @@ MassivxComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/massivx/massivx.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/massivx/massivx.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__["a" /* SharedService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_bittrex_service_client__["a" /* BittrexService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_bittrex_service_client__["a" /* BittrexService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_wallet_search_service_client__["a" /* WalletSearchServiceClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_wallet_search_service_client__["a" /* WalletSearchServiceClient */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_bittrex_service_client__["a" /* BittrexService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_bittrex_service_client__["a" /* BittrexService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _e || Object])
 ], MassivxComponent);
 
 var _a, _b, _c, _d, _e;
@@ -1813,7 +1813,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/wallet-list/wallet-search/wallet-search.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'wallet']\"\n           class=\"pull-left my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-5 col-md-5 col-lg-5\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n\n  <div class=\"my-container row\">\n    <h3>Wallet Details</h3>\n\n    <div class=\"row container\">\n\n      <div class=\"col-xs-6\">\n\n        <div class=\"row\">\n          <label>Summary</label>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-xs 1\">\n            <label>Address</label>\n          </div>\n          <div class=\"col-xs 5\">\n            <a [routerLink]=\"['/user', userId,'wallet', 'search', address]\">\n              {{address}}\n            </a>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-xs 1\">\n            <label>Hash 160</label>\n          </div>\n          <div class=\"col-xs 5\">\n            <a [routerLink]=\"['/user', userId,'wallet', 'search', address]\">\n              {{hash}}\n            </a>\n          </div>\n        </div>\n\n      </div>\n\n      <div class=\"col-xs-6\">\n\n        <div class=\"row\">\n          <label>Transactions</label>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-xs 1\">\n            <label>No. Transactions</label>\n          </div>\n          <div class=\"col-xs 5\">\n            <label>\n              {{noOfTransactions}}\n            </label>\n          </div>\n        </div>\n\n\n        <div class=\"row\">\n          <div class=\"col-xs 1\">\n            <label>Total Received</label>\n          </div>\n          <div class=\"col-xs 5\">\n            <label>\n              {{totalReceived}}\n            </label>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-xs 1\">\n            <label>Final Balance</label>\n          </div>\n          <div class=\"col-xs 5\">\n            <label>\n              {{finalBalance}}\n            </label>\n          </div>\n        </div>\n\n      </div>\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'wallet']\"\n           class=\"pull-left my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-5 col-md-5 col-lg-5\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n\n  <div class=\"my-container row\">\n    <h3>Wallet Details</h3>\n\n    <div class=\"row container\">\n\n      <div class=\"col-xs-6\">\n\n        <div class=\"row\">\n          <label>Summary</label>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-xs-1 col-md-1 col-lg-1\">\n            <label>Address</label>\n          </div>\n          <div class=\"col-xs-5 col-md-5 col-lg-5\">\n            <a [routerLink]=\"['/user', userId,'wallet', 'search', address]\">\n              {{address}}\n            </a>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-xs-1 col-md-1 col-lg-1\">\n            <label>Hash 160</label>\n          </div>\n          <div class=\"col-xs-5 col-md-5 col-lg-5\">\n            <a [routerLink]=\"['/user', userId,'wallet', 'search', address]\">\n              {{hash}}\n            </a>\n          </div>\n        </div>\n\n      </div>\n\n      <div class=\"col-xs-6\">\n\n        <div class=\"row\">\n          <label>Transactions</label>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-xs-1 col-md-1 col-lg-1\">\n            <label>No. Transactions</label>\n          </div>\n          <div class=\"col-xs-5 col-md-5 col-lg-5\">\n            <label>\n              {{noOfTransactions}}\n            </label>\n          </div>\n        </div>\n\n\n        <div class=\"row\">\n          <div class=\"col-xs-1 col-md-1 col-lg-1\">\n            <label>Total Received</label>\n          </div>\n          <div class=\"col-xs-5 col-md-5 col-lg-5\">\n            <label>\n              {{totalReceived}} BTC\n            </label>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-xs-1 col-md-1 col-lg-1\">\n            <label>Final Balance</label>\n          </div>\n          <div class=\"col-xs-5 col-md-5 col-lg-5\">\n            <label>\n              {{finalBalance}} BTC\n            </label>\n          </div>\n        </div>\n\n      </div>\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -2146,14 +2146,6 @@ var BittrexService = (function () {
         return this.http.get(url)
             .map(function (result) {
             return _this.result = result.json();
-        });
-    };
-    BittrexService.prototype.getCoins = function () {
-        var _this = this;
-        var url = 'https://www.cryptocompare.com/api/data/coinlist/';
-        return this.http.get(url)
-            .map(function (coins) {
-            return _this.result = coins.json();
         });
     };
     return BittrexService;
@@ -2634,6 +2626,15 @@ var WalletSearchServiceClient = (function () {
             return _this.result = result.json();
         });
     };
+    WalletSearchServiceClient.prototype.getStats = function () {
+        var _this = this;
+        var url = "https://cors-anywhere.herokuapp.com/" + "https://api.blockchain.info/stats";
+        console.log(url);
+        return this.http.get(url)
+            .map(function (result) {
+            return _this.result = result.json();
+        });
+    };
     return WalletSearchServiceClient;
 }());
 WalletSearchServiceClient = __decorate([
@@ -2983,9 +2984,14 @@ var Todo = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: true,
-    baseUrl: ''
+    production: false,
+    baseUrl: 'http://localhost:3100'
 };
 //# sourceMappingURL=environment.js.map
 

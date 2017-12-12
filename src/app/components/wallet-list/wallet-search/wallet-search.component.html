@@ -44,10 +44,10 @@
         </div>
         <hr>
         <div class="row">
-          <div class="col-xs 1">
+          <div class="col-xs-1 col-md-1 col-lg-1">
             <label>Address</label>
           </div>
-          <div class="col-xs 5">
+          <div class="col-xs-5 col-md-5 col-lg-5">
             <a [routerLink]="['/user', userId,'wallet', 'search', address]">
               {{address}}
             </a>
@@ -55,10 +55,10 @@
         </div>
 
         <div class="row">
-          <div class="col-xs 1">
+          <div class="col-xs-1 col-md-1 col-lg-1">
             <label>Hash 160</label>
           </div>
-          <div class="col-xs 5">
+          <div class="col-xs-5 col-md-5 col-lg-5">
             <a [routerLink]="['/user', userId,'wallet', 'search', address]">
               {{hash}}
             </a>
@@ -74,10 +74,10 @@
         </div>
         <hr>
         <div class="row">
-          <div class="col-xs 1">
+          <div class="col-xs-1 col-md-1 col-lg-1">
             <label>No. Transactions</label>
           </div>
-          <div class="col-xs 5">
+          <div class="col-xs-5 col-md-5 col-lg-5">
             <label>
               {{noOfTransactions}}
             </label>
@@ -86,23 +86,23 @@
 
 
         <div class="row">
-          <div class="col-xs 1">
+          <div class="col-xs-1 col-md-1 col-lg-1">
             <label>Total Received</label>
           </div>
-          <div class="col-xs 5">
+          <div class="col-xs-5 col-md-5 col-lg-5">
             <label>
-              {{totalReceived}}
+              {{totalReceived}} BTC
             </label>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-xs 1">
+          <div class="col-xs-1 col-md-1 col-lg-1">
             <label>Final Balance</label>
           </div>
-          <div class="col-xs 5">
+          <div class="col-xs-5 col-md-5 col-lg-5">
             <label>
-              {{finalBalance}}
+              {{finalBalance}} BTC
             </label>
           </div>
         </div>

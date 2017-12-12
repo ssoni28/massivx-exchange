@@ -18,11 +18,11 @@ export class BittrexService {
       .map(result =>
         this.result = result.json());
   }
-
+/*
   getCoins() {
-    const url = 'https://www.cryptocompare.com/api/data/coinlist/';
+    const url = 'https://www.cryptocompare.com/api/data/coinlist?cors=true';
     return this.http.get(url)
       .map(coins =>
       this.result = coins.json());
-  }
+  }*/
 }
