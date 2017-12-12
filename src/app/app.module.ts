@@ -30,6 +30,13 @@ import { MassivxComponent } from './components/massivx/massivx.component';
 import { WalletListComponent } from './components/wallet-list/wallet-list.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { AdminUserUpdateComponent } from './components/admin/admin-user-update/admin-user-update.component';
+import { WalletSearchComponent } from './components/wallet-list/wallet-search/wallet-search.component';
+import {WalletSearchServiceClient} from './services/wallet-search.service.client';
+import { SupportUserComponent } from './components/support/support-user/support-user.component';
+import { TicketNewComponent } from './components/support/ticket-new/ticket-new.component';
+import { TicketEditComponent } from './components/support/ticket-edit/ticket-edit.component';
+import { TicketListComponent } from './components/support/ticket-list/ticket-list.component';
+import {TicketService} from './services/ticket.service.client';
 
 @NgModule({
   // Declare components here
@@ -50,7 +57,12 @@ import { AdminUserUpdateComponent } from './components/admin/admin-user-update/a
     MassivxComponent,
     WalletListComponent,
     CreateUserComponent,
-    AdminUserUpdateComponent
+    AdminUserUpdateComponent,
+    WalletSearchComponent,
+    SupportUserComponent,
+    TicketNewComponent,
+    TicketEditComponent,
+    TicketListComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +78,8 @@ import { AdminUserUpdateComponent } from './components/admin/admin-user-update/a
     WebsiteService,
     BittrexService,
     WalletService,
+    TicketService,
+    WalletSearchServiceClient,
     AdminServiceClient,
     AuthenticationService],
   bootstrap: [AppComponent]

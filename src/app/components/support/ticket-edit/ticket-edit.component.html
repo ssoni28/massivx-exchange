@@ -1,0 +1,72 @@
+
+<div class="container-fluid">
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="row">
+
+      <div class="col-sm-1 col-md-1 col-lg-1">
+        <a [routerLink]="['/user', userId, 'profile']"
+           class="pull-left my-white-color navbar-brand">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2">
+        Edit Ticket
+      </div>
+      <div class="col-sm-9 col-md-9 col-lg-9">
+        <a (click)="updateTicket()"
+           class="pull-right my-white-color navbar-brand">
+          <span class="glyphicon glyphicon-ok"></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="my-container row">
+    <div class="col-xs-12 col-md-9 col-lg-9">
+      <div *ngIf="errorFlag" class="alert alert-danger custom-style">{{errorMsg}}</div>
+      <form class="form-group" #f="ngForm">
+        <label for="ticketName">Name</label>
+        <input class="form-control"
+               id="ticketName"
+               required
+               ngModel
+               type="text"
+               name="name"
+               placeholder="Ticket Name"
+               #name="ngModel"/>
+        <span class="help-block" *ngIf="!name.valid && name.touched">Please enter ticket name</span>
+
+        <label for="description">Description</label>
+        <input class="form-control"
+               id="description"
+               type="text"
+               name="description"
+               ngModel
+               placeholder="Ticket Description"
+               #title="ngModel"/>
+
+        <label for="type">Type</label>
+        <input class="form-control"
+               id="type"
+               type="text"
+               name="type"
+               ngModel
+               placeholder="Ticket Type"
+               #title="ngModel"/>
+        <a (click)="deletePage()"
+           class="btn btn-danger btn-block">Delete</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-custom navbar-fixed-bottom">
+  <div class="container-fluid">
+    <p class="navbar-text pull-right">
+      <a [routerLink]="['/user', userId, 'support']">
+        <span class="glyphicon glyphicon-user my-white-color"></span>
+      </a>
+    </p>
+  </div>
+</nav>

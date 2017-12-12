@@ -34,6 +34,12 @@ export class MassivxComponent implements OnInit {
     });
 
     this.getUser();
+
+    this.getCurrencies();
+  }
+
+  getCurrencies() {
+
   }
 
   getUser() {

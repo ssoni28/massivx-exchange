@@ -53,7 +53,7 @@ export class CreateUserComponent implements OnInit {
     const newUser = {
       username: this.username,
       password: this.password,
-      roles: this.role
+      roles: [this.role]
     };
     this.userService
       .createNewUser(this.userId, newUser)

@@ -110,12 +110,26 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_wallet_list_wallet_list_component__ = __webpack_require__("../../../../../src/app/components/wallet-list/wallet-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_create_user_create_user_component__ = __webpack_require__("../../../../../src/app/components/create-user/create-user.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_admin_admin_user_update_admin_user_update_component__ = __webpack_require__("../../../../../src/app/components/admin/admin-user-update/admin-user-update.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_wallet_list_wallet_search_wallet_search_component__ = __webpack_require__("../../../../../src/app/components/wallet-list/wallet-search/wallet-search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__services_wallet_search_service_client__ = __webpack_require__("../../../../../src/app/services/wallet-search.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_support_support_user_support_user_component__ = __webpack_require__("../../../../../src/app/components/support/support-user/support-user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_support_ticket_new_ticket_new_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-new/ticket-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_support_ticket_edit_ticket_edit_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-edit/ticket-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_support_ticket_list_ticket_list_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-list/ticket-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_ticket_service_client__ = __webpack_require__("../../../../../src/app/services/ticket.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
+
+
 
 
 
@@ -172,7 +186,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_27__components_massivx_massivx_component__["a" /* MassivxComponent */],
             __WEBPACK_IMPORTED_MODULE_28__components_wallet_list_wallet_list_component__["a" /* WalletListComponent */],
             __WEBPACK_IMPORTED_MODULE_29__components_create_user_create_user_component__["a" /* CreateUserComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__components_admin_admin_user_update_admin_user_update_component__["a" /* AdminUserUpdateComponent */]
+            __WEBPACK_IMPORTED_MODULE_30__components_admin_admin_user_update_admin_user_update_component__["a" /* AdminUserUpdateComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__components_wallet_list_wallet_search_wallet_search_component__["a" /* WalletSearchComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_support_support_user_support_user_component__["a" /* SupportUserComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__components_support_ticket_new_ticket_new_component__["a" /* TicketNewComponent */],
+            __WEBPACK_IMPORTED_MODULE_35__components_support_ticket_edit_ticket_edit_component__["a" /* TicketEditComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_support_ticket_list_ticket_list_component__["a" /* TicketListComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -188,6 +207,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_14__services_website_service_client__["a" /* WebsiteService */],
             __WEBPACK_IMPORTED_MODULE_15__services_bittrex_service_client__["a" /* BittrexService */],
             __WEBPACK_IMPORTED_MODULE_18__services_wallet_service_client__["a" /* WalletService */],
+            __WEBPACK_IMPORTED_MODULE_37__services_ticket_service_client__["a" /* TicketService */],
+            __WEBPACK_IMPORTED_MODULE_32__services_wallet_search_service_client__["a" /* WalletSearchServiceClient */],
             __WEBPACK_IMPORTED_MODULE_25__services_admin_service_client__["a" /* AdminServiceClient */],
             __WEBPACK_IMPORTED_MODULE_26__services_authentication_service_client__["a" /* AuthenticationService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
@@ -221,6 +242,16 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_wallet_list_wallet_list_component__ = __webpack_require__("../../../../../src/app/components/wallet-list/wallet-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_create_user_create_user_component__ = __webpack_require__("../../../../../src/app/components/create-user/create-user.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_admin_admin_user_update_admin_user_update_component__ = __webpack_require__("../../../../../src/app/components/admin/admin-user-update/admin-user-update.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_wallet_list_wallet_search_wallet_search_component__ = __webpack_require__("../../../../../src/app/components/wallet-list/wallet-search/wallet-search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_support_support_user_support_user_component__ = __webpack_require__("../../../../../src/app/components/support/support-user/support-user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_support_ticket_edit_ticket_edit_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-edit/ticket-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_support_ticket_new_ticket_new_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-new/ticket-new.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_support_ticket_list_ticket_list_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-list/ticket-list.component.ts");
+
+
+
+
+
 
 
 
@@ -246,16 +277,21 @@ var APP_ROUTES = [
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_9__components_user_register_register_component__["a" /* RegisterComponent */] },
     { path: 'user/:userId', component: __WEBPACK_IMPORTED_MODULE_14__components_massivx_massivx_component__["a" /* MassivxComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
     { path: 'user/:userId/profile', component: __WEBPACK_IMPORTED_MODULE_10__components_user_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
+    { path: 'user/:userId/support', component: __WEBPACK_IMPORTED_MODULE_19__components_support_support_user_support_user_component__["a" /* SupportUserComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
     { path: 'todo', component: __WEBPACK_IMPORTED_MODULE_3__todo_todo_component__["a" /* TodoComponent */] },
     { path: 'todoList', component: __WEBPACK_IMPORTED_MODULE_4__todo_list_todo_list_component__["a" /* TodoListComponent */] },
     { path: 'test', component: __WEBPACK_IMPORTED_MODULE_2__components_test_test_component__["a" /* TestComponent */] },
     { path: 'website', component: __WEBPACK_IMPORTED_MODULE_5__components_website_website_list_website_list_component__["a" /* WebsiteListComponent */] },
     { path: 'apitest', component: __WEBPACK_IMPORTED_MODULE_6__components_api_test_api_test_component__["a" /* ApiTestComponent */] },
     { path: 'user/:userId/createwallet', component: __WEBPACK_IMPORTED_MODULE_7__components_wallet_wallet_component__["a" /* WalletComponent */] },
-    { path: 'user/:userId/wallet', component: __WEBPACK_IMPORTED_MODULE_15__components_wallet_list_wallet_list_component__["a" /* WalletListComponent */] },
+    { path: 'user/:userId/wallet', component: __WEBPACK_IMPORTED_MODULE_15__components_wallet_list_wallet_list_component__["a" /* WalletListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
     { path: 'user/:userId/admin/user', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_user_list_admin_user_list_component__["a" /* AdminUserListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_admin_service_client__["a" /* AdminServiceClient */]] },
     { path: 'user/:userId/admin/newuser', component: __WEBPACK_IMPORTED_MODULE_16__components_create_user_create_user_component__["a" /* CreateUserComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_admin_service_client__["a" /* AdminServiceClient */]] },
-    { path: 'user/:userId/admin/updateuser/:exuserId/profile', component: __WEBPACK_IMPORTED_MODULE_17__components_admin_admin_user_update_admin_user_update_component__["a" /* AdminUserUpdateComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_admin_service_client__["a" /* AdminServiceClient */]] }
+    { path: 'user/:userId/admin/updateuser/:exuserId/profile', component: __WEBPACK_IMPORTED_MODULE_17__components_admin_admin_user_update_admin_user_update_component__["a" /* AdminUserUpdateComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_admin_service_client__["a" /* AdminServiceClient */]] },
+    { path: 'user/:userId/wallet/search/:walletAddress', component: __WEBPACK_IMPORTED_MODULE_18__components_wallet_list_wallet_search_wallet_search_component__["a" /* WalletSearchComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
+    { path: 'user/:userId/createticket', component: __WEBPACK_IMPORTED_MODULE_21__components_support_ticket_new_ticket_new_component__["a" /* TicketNewComponent */] },
+    { path: 'user/:userId/createticket/:ticketId', component: __WEBPACK_IMPORTED_MODULE_20__components_support_ticket_edit_ticket_edit_component__["a" /* TicketEditComponent */] },
+    { path: 'user/:userId/tickets', component: __WEBPACK_IMPORTED_MODULE_22__components_support_ticket_list_ticket_list_component__["a" /* TicketListComponent */] },
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forRoot(APP_ROUTES);
@@ -569,7 +605,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/create-user/create-user.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, '/profile']\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        Create New User\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"container\">\n\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      {{errorMsg}}\n    </div>\n\n    <h1>Register</h1>\n    <form (ngSubmit) = \"register()\" #f=\"ngForm\">\n\n      <input placeholder=\"username\"\n             name=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             ngModel\n             required\n             #username=\"ngModel\"/>\n\n      <span class=\"help-block\" *ngIf=\"!username.valid && username.touched\">Please enter username!</span>\n\n      <input name=\"password\"\n             placeholder=\"password\"\n             type=\"password\"\n             class=\"form-control\"\n             ngModel\n             required\n             #password=\"ngModel\"/>\n      <span class=\"help-block\" *ngIf=\"!password.valid && password.touched\">Please enter password!</span>\n\n\n      <input name = \"verifyPassword\"\n             placeholder=\"verify password\"\n             type=\"password\"\n             class=\"form-control\"\n             ngModel\n             required\n             #verifyPassword=\"ngModel\"/>\n      <span class=\"help-block\" *ngIf=\"!verifyPassword.valid && verifyPassword.touched\">Please verify password!</span>\n\n      <select class=\"form-control\"\n              ngModel\n              name=\"roles\"\n              #role=\"ngModel\">\n        <option value=\"EXCHANGEUSER\">EXCHANGEUSER</option>\n        <option value=\"SUPPORTUSER\">SUPPORTUSER</option>\n      </select>\n\n      <button class=\"btn btn-primary btn-block\"\n              type=\"submit\"\n              [disabled]=\"!f.valid\">Register</button>\n\n\n      <button class=\"btn btn-danger btn-block\"\n              type=\"button\"\n              (click)=\"cancel()\">Cancel</button>\n\n    </form>\n\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, '/profile']\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        Create New User\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"container\">\n\n    <div *ngIf=\"errorFlag\"\n         class=\"alert alert-danger\">\n      {{errorMsg}}\n    </div>\n\n    <h1>Register</h1>\n    <form (ngSubmit) = \"register()\" #f=\"ngForm\">\n\n      <input placeholder=\"username\"\n             name=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             ngModel\n             required\n             #username=\"ngModel\"/>\n\n      <span class=\"help-block\" *ngIf=\"!username.valid && username.touched\">Please enter username!</span>\n\n      <input name=\"password\"\n             placeholder=\"password\"\n             type=\"password\"\n             class=\"form-control\"\n             ngModel\n             required\n             #password=\"ngModel\"/>\n      <span class=\"help-block\" *ngIf=\"!password.valid && password.touched\">Please enter password!</span>\n\n\n      <input name = \"verifyPassword\"\n             placeholder=\"verify password\"\n             type=\"password\"\n             class=\"form-control\"\n             ngModel\n             required\n             #verifyPassword=\"ngModel\"/>\n      <span class=\"help-block\" *ngIf=\"!verifyPassword.valid && verifyPassword.touched\">Please verify password!</span>\n\n      <select class=\"form-control\"\n              ngModel\n              name=\"role\"\n              #role=\"ngModel\">\n        <option value=\"EXCHANGEUSER\">EXCHANGEUSER</option>\n        <option value=\"SUPPORTUSER\">SUPPORTUSER</option>\n      </select>\n\n      <button class=\"btn btn-primary btn-block\"\n              type=\"submit\"\n              [disabled]=\"!f.valid\">Register</button>\n\n\n      <button class=\"btn btn-danger btn-block\"\n              type=\"button\"\n              (click)=\"cancel()\">Cancel</button>\n\n    </form>\n\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -628,7 +664,7 @@ var CreateUserComponent = (function () {
         var newUser = {
             username: this.username,
             password: this.password,
-            roles: this.role
+            roles: [this.role]
         };
         this.userService
             .createNewUser(this.userId, newUser)
@@ -741,7 +777,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/massivx/massivx.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-5 col-md-5 col-lg-5\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n\n    <div class=\"my-container row\">\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"amount\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"amount\"\n               placeholder=\"YOU HAVE\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n          value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"exchange\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"exchange\"\n               placeholder=\"YOU GET\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n                  value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-2 col-md-2 col-lg-2\">\n        <a (click)=\"exchange()\"\n           class=\"btn btn-success btn-block\">Exchange</a>\n      </div>\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n\n    <div class=\"my-container row\">\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"amount\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"amount\"\n               placeholder=\"YOU HAVE\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n          value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"exchange\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"exchange\"\n               placeholder=\"YOU GET\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n                  value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-2 col-md-2 col-lg-2\">\n        <a (click)=\"exchange()\"\n           class=\"btn btn-success btn-block\">Exchange</a>\n      </div>\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -782,6 +818,9 @@ var MassivxComponent = (function () {
             }
         });
         this.getUser();
+        this.getCurrencies();
+    };
+    MassivxComponent.prototype.getCurrencies = function () {
     };
     MassivxComponent.prototype.getUser = function () {
         var _this = this;
@@ -818,6 +857,376 @@ MassivxComponent = __decorate([
 
 var _a, _b, _c, _d;
 //# sourceMappingURL=massivx.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/support-user/support-user.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/support-user/support-user.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createticket']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Ticket\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'tickets']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          View Tickets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n\n    <div class=\"my-container row\">\n\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'support']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/support-user/support-user.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SupportUserComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SupportUserComponent = (function () {
+    function SupportUserComponent(route, router) {
+        this.route = route;
+        this.router = router;
+    }
+    SupportUserComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params['userId']) {
+                _this.userId = params['userId'];
+            }
+        });
+    };
+    return SupportUserComponent;
+}());
+SupportUserComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-support-user',
+        template: __webpack_require__("../../../../../src/app/components/support/support-user/support-user.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/support/support-user/support-user.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], SupportUserComponent);
+
+var _a, _b;
+//# sourceMappingURL=support-user.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/ticket-edit/ticket-edit.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/ticket-edit/ticket-edit.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"container-fluid\">\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'profile']\"\n           class=\"pull-left my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        Edit Ticket\n      </div>\n      <div class=\"col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"updateTicket()\"\n           class=\"pull-right my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-ok\"></span>\n        </a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container row\">\n    <div class=\"col-xs-12 col-md-9 col-lg-9\">\n      <div *ngIf=\"errorFlag\" class=\"alert alert-danger custom-style\">{{errorMsg}}</div>\n      <form class=\"form-group\" #f=\"ngForm\">\n        <label for=\"ticketName\">Name</label>\n        <input class=\"form-control\"\n               id=\"ticketName\"\n               required\n               ngModel\n               type=\"text\"\n               name=\"name\"\n               placeholder=\"Ticket Name\"\n               #name=\"ngModel\"/>\n        <span class=\"help-block\" *ngIf=\"!name.valid && name.touched\">Please enter ticket name</span>\n\n        <label for=\"description\">Description</label>\n        <input class=\"form-control\"\n               id=\"description\"\n               type=\"text\"\n               name=\"description\"\n               ngModel\n               placeholder=\"Ticket Description\"\n               #title=\"ngModel\"/>\n\n        <label for=\"type\">Type</label>\n        <input class=\"form-control\"\n               id=\"type\"\n               type=\"text\"\n               name=\"type\"\n               ngModel\n               placeholder=\"Ticket Type\"\n               #title=\"ngModel\"/>\n        <a (click)=\"deletePage()\"\n           class=\"btn btn-danger btn-block\">Delete</a>\n      </form>\n    </div>\n  </div>\n</div>\n\n<nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a [routerLink]=\"['/user', userId, 'support']\">\n        <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n      </a>\n    </p>\n  </div>\n</nav>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/ticket-edit/ticket-edit.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TicketEditComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_ticket_service_client__ = __webpack_require__("../../../../../src/app/services/ticket.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_ticket_model_client__ = __webpack_require__("../../../../../src/app/models/ticket.model.client.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var TicketEditComponent = (function () {
+    function TicketEditComponent(router, route, ticketService) {
+        this.router = router;
+        this.route = route;
+        this.ticketService = ticketService;
+    }
+    TicketEditComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params['userId']) {
+                _this.userId = params['userId'];
+            }
+            if (params['ticketId']) {
+                _this.ticketId = params['ticketId'];
+            }
+        });
+        this.getTicket();
+    };
+    TicketEditComponent.prototype.getTicket = function () {
+        var _this = this;
+        this.ticketService.findTicketById(this.ticketId, this.userId)
+            .subscribe(function (currentTicket) {
+            _this.name = currentTicket.name;
+            _this.type = currentTicket.type;
+            _this.description = currentTicket.description;
+        });
+    };
+    TicketEditComponent.prototype.updateTicket = function () {
+        var _this = this;
+        var ticket = new __WEBPACK_IMPORTED_MODULE_4__models_ticket_model_client__["a" /* Ticket */](this.userId, this.name, this.type, this.description);
+        if (ticket.name !== '') {
+            this.ticketService.updateTicket(this.userId, this.ticketId, ticket)
+                .subscribe(function (data) {
+                _this.router.navigate(['/user', _this.userId, 'createticket', _this.ticketId]);
+            });
+        }
+        else {
+            this.errorFlag = true;
+            this.errorMsg = 'Please provide ticket name';
+        }
+    };
+    TicketEditComponent.prototype.deleteTicket = function () {
+        var _this = this;
+        this.ticketService.deleteTicket(this.userId, this.ticketId)
+            .subscribe(function (data) {
+            _this.router.navigate(['/user', _this.userId, 'tickets']);
+        });
+    };
+    return TicketEditComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('f'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */]) === "function" && _a || Object)
+], TicketEditComponent.prototype, "ticketEditForm", void 0);
+TicketEditComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-ticket-edit',
+        template: __webpack_require__("../../../../../src/app/components/support/ticket-edit/ticket-edit.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/support/ticket-edit/ticket-edit.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_ticket_service_client__["a" /* TicketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_ticket_service_client__["a" /* TicketService */]) === "function" && _d || Object])
+], TicketEditComponent);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=ticket-edit.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/ticket-list/ticket-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/ticket-list/ticket-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createticket']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Ticket\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'viewticket']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          View Tickets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n\n    <div class=\"my-container row\">\n      <ul class=\"list-group\">\n        <li *ngFor=\"let tikcet of tickets\"\n            class=\"list-group-custom-item\">\n          {{ticket.name}}\n          <a class=\"pull-right\"\n             [routerLink]=\"['/user', userId, 'createticket', ticket._id]\">\n            <span class=\"glyphicon glyphicon-cog\"></span>\n          </a>\n        </li>\n      </ul>\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'support']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/ticket-list/ticket-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TicketListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_ticket_service_client__ = __webpack_require__("../../../../../src/app/services/ticket.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TicketListComponent = (function () {
+    function TicketListComponent(ticketService, route, router) {
+        this.ticketService = ticketService;
+        this.route = route;
+        this.router = router;
+    }
+    TicketListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params['userId']) {
+                _this.userId = params['userId'];
+            }
+        });
+        this.ticketService
+            .findAllTickets(this.userId)
+            .subscribe(function (tickets) {
+            _this.tickets = tickets;
+        });
+    };
+    return TicketListComponent;
+}());
+TicketListComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-ticket-list',
+        template: __webpack_require__("../../../../../src/app/components/support/ticket-list/ticket-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/support/ticket-list/ticket-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_ticket_service_client__["a" /* TicketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_ticket_service_client__["a" /* TicketService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
+], TicketListComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=ticket-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/ticket-new/ticket-new.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/ticket-new/ticket-new.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"container-fluid\">\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n\n    <div class=\"row\">\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'profile']\"\n           class=\"pull-left navbar-brand my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        New Ticket\n      </div>\n      <div class=\"col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"createTicket()\"\n           class=\"pull-right navbar-brand my-white-color\">\n          <span class=\"glyphicon glyphicon-ok\"></span>\n        </a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container row\">\n    <div class=\"col-xs-12 col-md-9 col-lg-9\">\n      <div *ngIf=\"errorFlag\" class=\"alert alert-danger custom-style\">{{errorMsg}}</div>\n      <form class=\"form-group\" #f=\"ngForm\">\n        <label for=\"ticketName\">Name</label>\n        <input class=\"form-control\"\n               id=\"ticketName\"\n               required\n               ngModel\n               type=\"text\"\n               name=\"name\"\n               placeholder=\"Ticket Name\"\n               #name=\"ngModel\"/>\n        <span class=\"help-block\" *ngIf=\"!name.valid && name.touched\">Please enter ticket name</span>\n\n        <label for=\"description\">Description</label>\n        <input class=\"form-control\"\n               id=\"description\"\n               type=\"text\"\n               name=\"description\"\n               ngModel\n               placeholder=\"Ticket Description\"\n               #title=\"ngModel\"/>\n\n        <label for=\"type\">Type</label>\n        <input class=\"form-control\"\n               id=\"type\"\n               type=\"text\"\n               name=\"type\"\n               ngModel\n               placeholder=\"Ticket Type\"\n               #title=\"ngModel\"/>\n      </form>\n    </div>\n  </div>\n</div>\n\n<nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a [routerLink]=\"['/user', userId, 'support']\">\n        <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n      </a>\n    </p>\n  </div>\n</nav>\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/support/ticket-new/ticket-new.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TicketNewComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_ticket_service_client__ = __webpack_require__("../../../../../src/app/services/ticket.service.client.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var TicketNewComponent = (function () {
+    function TicketNewComponent(router, route, ticketService) {
+        this.router = router;
+        this.route = route;
+        this.ticketService = ticketService;
+    }
+    TicketNewComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params['userId']) {
+                _this.userId = params['userId'];
+            }
+        });
+    };
+    TicketNewComponent.prototype.createTicket = function () {
+        var _this = this;
+        var newTicket = {
+            userId: this.userId,
+            name: this.ticketForm.value.name,
+            description: this.ticketForm.value.description,
+            type: this.ticketForm.value.type
+        };
+        /* this.page = new Page('', this.name, this.websiteId, this.title);*/
+        if (newTicket.name !== '') {
+            this.ticketService.createTicket(this.userId, newTicket)
+                .subscribe(function (data) {
+                _this.router.navigate(['/user', _this.userId, 'tickets']);
+            });
+        }
+        else {
+            this.errorFlag = true;
+            this.errorMsg = 'Please provide ticket name';
+        }
+    };
+    return TicketNewComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('f'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */]) === "function" && _a || Object)
+], TicketNewComponent.prototype, "ticketForm", void 0);
+TicketNewComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-ticket-new',
+        template: __webpack_require__("../../../../../src/app/components/support/ticket-new/ticket-new.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/support/ticket-new/ticket-new.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_ticket_service_client__["a" /* TicketService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_ticket_service_client__["a" /* TicketService */]) === "function" && _d || Object])
+], TicketNewComponent);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=ticket-new.component.js.map
 
 /***/ }),
 
@@ -983,10 +1392,26 @@ var LoginComponent = (function () {
         this.userService.login(this.username, this.password)
             .subscribe(function (data) {
             _this.sharedService.user = data;
-            _this.router.navigate(['/user', data._id]);
+            _this.roles = data.roles;
+            _this.isSupport = _this.getRole();
+            if (_this.isSupport) {
+                _this.router.navigate(['/user', data._id, 'support']);
+            }
+            else {
+                _this.router.navigate(['/user', data._id]);
+            }
         }, function (error) {
             console.log(error);
         });
+    };
+    LoginComponent.prototype.getRole = function () {
+        for (var _i = 0, _a = this.roles; _i < _a.length; _i++) {
+            var role = _a[_i];
+            if (role === 'SUPPORTUSER') {
+                return true;
+            }
+            return false;
+        }
     };
     return LoginComponent;
 }());
@@ -1265,7 +1690,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/wallet-list/wallet-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\n        hidden-xs hidden-sm\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-5 col-md-5 col-lg-5\">\n        <a [routerLink]=\"['/user', userId,'/createwallet']\"\n           class=\"btn btn-danger pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'/wallet']\"\n           class=\"btn btn-danger pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n\n  <div class=\"my-container row\">\n    <ul class=\"list-group\">\n      <li *ngFor=\"let wallet of wallets\"\n          class=\"list-group-custom-item\">\n        <div>\n          <label>Wallet Address</label>\n          {{wallet['address']}}\n          <br>\n          <label>Private Key</label>\n          {{wallet['privateKey']}}\n        </div>\n      </li>\n    </ul>\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\n        hidden-xs hidden-sm\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-5 col-md-5 col-lg-5\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-danger pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-danger pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n\n  <div class=\"my-container row\">\n    <ul class=\"list-group\">\n      <li *ngFor=\"let wallet of wallets\"\n          class=\"list-group-custom-item\">\n        <div>\n          <label>Wallet Address</label>\n          <a [routerLink]=\"['/user', userId, 'wallet', 'search', wallet.address]\">\n            {{wallet['address']}}\n          </a>\n          <br>\n          <label>Private Key</label>\n          {{wallet['privateKey']}}\n        </div>\n      </li>\n    </ul>\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -1324,6 +1749,96 @@ WalletListComponent = __decorate([
 
 var _a, _b, _c;
 //# sourceMappingURL=wallet-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/wallet-list/wallet-search/wallet-search.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/wallet-list/wallet-search/wallet-search.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'wallet']\"\n           class=\"pull-left my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\n        hidden-xs hidden-sm\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-5 col-md-5 col-lg-5\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n\n  <div class=\"my-container row\">\n    <h3>Wallet Details</h3>\n\n    <div class=\"row container\">\n\n      <div class=\"col-xs-6\">\n\n        <div class=\"row\">\n          <label>Summary</label>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-xs 1\">\n            <label>Address</label>\n          </div>\n          <div class=\"col-xs 5\">\n            <a [routerLink]=\"['/user', userId,'wallet', 'search', address]\">\n              {{address}}\n            </a>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-xs 1\">\n            <label>Hash 160</label>\n          </div>\n          <div class=\"col-xs 5\">\n            <a [routerLink]=\"['/user', userId,'wallet', 'search', address]\">\n              {{hash}}\n            </a>\n          </div>\n        </div>\n\n      </div>\n\n      <div class=\"col-xs-6\">\n\n        <div class=\"row\">\n          <label>Transactions</label>\n        </div>\n        <hr>\n        <div class=\"row\">\n          <div class=\"col-xs 1\">\n            <label>No. Transactions</label>\n          </div>\n          <div class=\"col-xs 5\">\n            <label>\n              {{noOfTransactions}}\n            </label>\n          </div>\n        </div>\n\n\n        <div class=\"row\">\n          <div class=\"col-xs 1\">\n            <label>Total Received</label>\n          </div>\n          <div class=\"col-xs 5\">\n            <label>\n              {{totalReceived}}\n            </label>\n          </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"col-xs 1\">\n            <label>Final Balance</label>\n          </div>\n          <div class=\"col-xs 5\">\n            <label>\n              {{finalBalance}}\n            </label>\n          </div>\n        </div>\n\n      </div>\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/wallet-list/wallet-search/wallet-search.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WalletSearchComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_wallet_search_service_client__ = __webpack_require__("../../../../../src/app/services/wallet-search.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var WalletSearchComponent = (function () {
+    function WalletSearchComponent(http, walletSearchService, route, router) {
+        this.http = http;
+        this.walletSearchService = walletSearchService;
+        this.route = route;
+        this.router = router;
+    }
+    WalletSearchComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            _this.userId = params['userId'];
+            _this.address = params['walletAddress'];
+        });
+        this.walletSearchService.getAddress(this.address)
+            .subscribe(function (data) {
+            _this.hash = data.hash160;
+            console.log(_this.hash);
+            _this.noOfTransactions = data.n_tx;
+            console.log(_this.noOfTransactions);
+            _this.totalReceived = data.total_received;
+            _this.totalSent = data.total_sent;
+            _this.finalBalance = data.final_balance;
+            _this.transactions = data.txs;
+            console.log(data);
+            console.log(data.hash160);
+        });
+    };
+    return WalletSearchComponent;
+}());
+WalletSearchComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-wallet-search',
+        template: __webpack_require__("../../../../../src/app/components/wallet-list/wallet-search/wallet-search.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/wallet-list/wallet-search/wallet-search.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_wallet_search_service_client__["a" /* WalletSearchServiceClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_wallet_search_service_client__["a" /* WalletSearchServiceClient */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _d || Object])
+], WalletSearchComponent);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=wallet-search.component.js.map
 
 /***/ }),
 
@@ -1484,6 +1999,25 @@ WebsiteListComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=website-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/models/ticket.model.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Ticket; });
+var Ticket = (function () {
+    function Ticket(userId, name, description, type) {
+        this.userId = userId;
+        this.name = name;
+        this.description = description;
+        this.type = type;
+    }
+    return Ticket;
+}());
+
+//# sourceMappingURL=ticket.model.client.js.map
 
 /***/ }),
 
@@ -1693,6 +2227,92 @@ TestService = __decorate([
 
 var _a;
 //# sourceMappingURL=test.service.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/ticket.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TicketService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+// injecting service into module
+var TicketService = (function () {
+    function TicketService(http, router) {
+        this.http = http;
+        this.router = router;
+        this.newUrl = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl;
+    }
+    TicketService.prototype.findUserByCredentials = function (username, password) {
+        var url = this.newUrl + '/api/user?username=' + username + '&password=' + password;
+        return this.http.get(url)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    TicketService.prototype.createTicket = function (userId, ticket) {
+        var url = this.newUrl + '/api/user/' + userId + '/createticket';
+        return this.http.post(url, ticket)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    TicketService.prototype.findTicketById = function (ticketId, userId) {
+        var url = this.newUrl + '/api/user/' + userId + '/createticket/' + ticketId;
+        return this.http.get(url)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    TicketService.prototype.updateTicket = function (userId, ticketId, ticket) {
+        var url = this.newUrl + '/api/user/' + userId + '/createticket/' + ticketId;
+        return this.http.put(url, ticketId, ticket)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    TicketService.prototype.deleteTicket = function (userId, ticketId) {
+        var url = this.newUrl + '/api/user/' + userId + '/createticket/' + ticketId;
+        return this.http.delete(url)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    TicketService.prototype.findAllTickets = function (userId) {
+        var url = this.newUrl + '/api/user/' + userId + '/tickets';
+        return this.http.get(url)
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    return TicketService;
+}());
+TicketService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], TicketService);
+
+var _a, _b;
+//# sourceMappingURL=ticket.service.client.js.map
 
 /***/ }),
 
@@ -1951,6 +2571,49 @@ UserService = __decorate([
 
 var _a, _b, _c;
 //# sourceMappingURL=user.service.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/wallet-search.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WalletSearchServiceClient; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var WalletSearchServiceClient = (function () {
+    function WalletSearchServiceClient(http) {
+        this.http = http;
+    }
+    WalletSearchServiceClient.prototype.getAddress = function (address) {
+        var _this = this;
+        var url = "https://cors-anywhere.herokuapp.com/" + "https://blockchain.info/rawaddr/" + address + "?format=json&cors=true";
+        console.log(url);
+        return this.http.get(url)
+            .map(function (result) {
+            return _this.result = result.json();
+        });
+    };
+    return WalletSearchServiceClient;
+}());
+WalletSearchServiceClient = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
+], WalletSearchServiceClient);
+
+var _a;
+//# sourceMappingURL=wallet-search.service.client.js.map
 
 /***/ }),
 
@@ -2291,9 +2954,14 @@ var Todo = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: true,
-    baseUrl: ''
+    production: false,
+    baseUrl: 'http://localhost:3100'
 };
 //# sourceMappingURL=environment.js.map
 

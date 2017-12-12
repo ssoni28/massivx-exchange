@@ -1,0 +1,128 @@
+<div class="container-fluid">
+
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="row">
+
+      <div class="col-sm-1 col-md-1 col-lg-1">
+        <a [routerLink]="['/user', userId, 'wallet']"
+           class="pull-left my-white-color navbar-brand">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2
+        hidden-xs hidden-sm">
+        MassivX
+      </div>
+
+      <div class="navbar-brand col-sm-5 col-md-5 col-lg-5">
+        <a [routerLink]="['/user', userId,'createwallet']"
+           class="btn btn-success pull-right my-white-color">
+          Create Wallet
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3">
+        <a [routerLink]="['/user', userId,'wallet']"
+           class="btn btn-success pull-right my-white-color">
+          My Wallets
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <div class="my-container row">
+    <h3>Wallet Details</h3>
+
+    <div class="row container">
+
+      <div class="col-xs-6">
+
+        <div class="row">
+          <label>Summary</label>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs 1">
+            <label>Address</label>
+          </div>
+          <div class="col-xs 5">
+            <a [routerLink]="['/user', userId,'wallet', 'search', address]">
+              {{address}}
+            </a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs 1">
+            <label>Hash 160</label>
+          </div>
+          <div class="col-xs 5">
+            <a [routerLink]="['/user', userId,'wallet', 'search', address]">
+              {{hash}}
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-xs-6">
+
+        <div class="row">
+          <label>Transactions</label>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs 1">
+            <label>No. Transactions</label>
+          </div>
+          <div class="col-xs 5">
+            <label>
+              {{noOfTransactions}}
+            </label>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-xs 1">
+            <label>Total Received</label>
+          </div>
+          <div class="col-xs 5">
+            <label>
+              {{totalReceived}}
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs 1">
+            <label>Final Balance</label>
+          </div>
+          <div class="col-xs 5">
+            <label>
+              {{finalBalance}}
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="navbar navbar-custom navbar-fixed-bottom">
+    <div class="container-fluid">
+      <p class="navbar-text pull-right">
+        <a [routerLink]="['/user', userId, 'profile']">
+          <span class="glyphicon glyphicon-user my-white-color"></span>
+        </a>
+      </p>
+    </div>
+  </nav>
+
+
+
+</div>

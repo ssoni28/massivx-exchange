@@ -18,6 +18,11 @@ import {MassivxComponent} from './components/massivx/massivx.component';
 import {WalletListComponent} from './components/wallet-list/wallet-list.component';
 import {CreateUserComponent} from './components/create-user/create-user.component';
 import {AdminUserUpdateComponent} from './components/admin/admin-user-update/admin-user-update.component';
+import {WalletSearchComponent} from './components/wallet-list/wallet-search/wallet-search.component';
+import {SupportUserComponent} from './components/support/support-user/support-user.component';
+import {TicketEditComponent} from './components/support/ticket-edit/ticket-edit.component';
+import {TicketNewComponent} from './components/support/ticket-new/ticket-new.component';
+import {TicketListComponent} from './components/support/ticket-list/ticket-list.component';
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -26,16 +31,22 @@ const APP_ROUTES: Routes = [
   {path: 'register', component : RegisterComponent},
   {path: 'user/:userId', component: MassivxComponent, canActivate: [AuthenticationService]},
   {path: 'user/:userId/profile', component: ProfileComponent, canActivate: [AuthenticationService]},
+  {path: 'user/:userId/support', component: SupportUserComponent, canActivate: [AuthenticationService]},
   {path: 'todo', component : TodoComponent},
   {path: 'todoList', component : TodoListComponent},
   {path: 'test', component: TestComponent},
   {path: 'website', component: WebsiteListComponent},
   {path: 'apitest', component: ApiTestComponent},
   {path: 'user/:userId/createwallet', component: WalletComponent},
-  {path: 'user/:userId/wallet', component: WalletListComponent},
+  {path: 'user/:userId/wallet', component: WalletListComponent, canActivate: [AuthenticationService]},
   {path: 'user/:userId/admin/user', component: AdminUserListComponent, canActivate: [AdminServiceClient] },
   {path: 'user/:userId/admin/newuser', component: CreateUserComponent, canActivate: [AdminServiceClient] },
-  {path: 'user/:userId/admin/updateuser/:exuserId/profile', component: AdminUserUpdateComponent, canActivate: [AdminServiceClient]}
+  {path: 'user/:userId/admin/updateuser/:exuserId/profile', component: AdminUserUpdateComponent, canActivate: [AdminServiceClient]},
+  {path: 'user/:userId/wallet/search/:walletAddress', component: WalletSearchComponent, canActivate: [AuthenticationService]},
+  {path: 'user/:userId/createticket', component: TicketNewComponent},
+  {path: 'user/:userId/createticket/:ticketId', component: TicketEditComponent},
+  {path: 'user/:userId/tickets', component: TicketListComponent},
+
 ];
 
 // Export the routes as module providers

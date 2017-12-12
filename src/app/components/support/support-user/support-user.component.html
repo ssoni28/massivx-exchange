@@ -1,0 +1,53 @@
+<div class="container-fluid">
+
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="row">
+
+      <div class="navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3">
+        MassivX
+      </div>
+
+      <div class="navbar-brand col-sm-3 col-md-3 col-lg-3">
+        <a [routerLink]="['/user', userId,'createticket']"
+           class="btn btn-success pull-right my-white-color">
+          Create Ticket
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3">
+        <a [routerLink]="['/user', userId,'tickets']"
+           class="btn btn-success pull-right my-white-color">
+          View Tickets
+        </a>
+      </div>
+
+      <div class="navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3">
+        <a [routerLink]="['/apitest']"
+           class="btn btn-success pull-right my-white-color">
+          Search Market Rate
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="my-container">
+
+    <div class="my-container row">
+
+
+    </div>
+
+  </div>
+
+  <nav class="navbar navbar-custom navbar-fixed-bottom">
+    <div class="container-fluid">
+      <p class="navbar-text pull-right">
+        <a [routerLink]="['/user', userId, 'support']">
+          <span class="glyphicon glyphicon-user my-white-color"></span>
+        </a>
+      </p>
+    </div>
+  </nav>
+
+</div>
