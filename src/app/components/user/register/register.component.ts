@@ -5,7 +5,8 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/Rx';
 import {NgForm} from '@angular/forms';
 import {SharedService} from '../../../services/shared.service.client';
-import {User} from '../../model/user.model.client';
+import {User} from '../../../models/user.model.client';
+
 
 @Component({
   selector: 'app-register',

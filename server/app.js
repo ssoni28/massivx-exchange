@@ -7,5 +7,6 @@ module.exports = function (app) {
   require("./model/model.server.js");
   require("./services/wallet.service.server.js") (app);
   require("./services/user.service.server.js") (app);
+  require("./services/ticket.service.server.js") (app);
 };
 

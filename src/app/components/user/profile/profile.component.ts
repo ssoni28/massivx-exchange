@@ -3,7 +3,8 @@ import 'rxjs/Rx';
 import {UserService} from '../../../services/user.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SharedService} from '../../../services/shared.service.client';
-import {User} from '../../model/user.model.client';
+import {User} from '../../../models/user.model.client';
+
 
 @Component({
   selector: 'app-profile',
@@ -22,6 +23,7 @@ export class ProfileComponent implements OnInit {
   roles: String[];
   isAdmin: boolean;
   errorFlag: boolean;
+  isSupport: boolean;
   errorMsg = 'Invalid username or password!';
   constructor(
     private userService: UserService,
@@ -50,6 +52,7 @@ export class ProfileComponent implements OnInit {
           this.email = currentUser.email;
           this.roles = currentUser.roles;
           this.isAdmin = this.getRole();
+          this.isSupport = this.checkSupport();
         }
       );
   }
@@ -76,7 +79,7 @@ export class ProfileComponent implements OnInit {
     this.userService.updateUser(this.userId, this.user)
       .subscribe(
         (data: User) => {
-          this.router.navigate(['/user', this.userId]);
+          this.navigate();
         }
       );
   }
@@ -90,4 +93,20 @@ export class ProfileComponent implements OnInit {
       );
   }
 
+  navigate() {
+    if (this.isSupport){
+      this.router.navigate(['/user', this.userId, 'support']);
+    } else {
+      this.router.navigate(['/user', this.userId]);
+    }
+  }
+
+  checkSupport() {
+    for(let role of this.roles) {
+      if(role === 'SUPPORTUSER') {
+        return true;
+      }
+      return false;
+    }
+  }
 }

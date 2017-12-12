@@ -52,12 +52,17 @@ export class TicketEditComponent implements OnInit {
 
 
   updateTicket() {
-    const ticket = new Ticket(this.userId, this.name, this.type, this.description);
+    const ticket = {
+      userId: this.userId,
+      name: this.name,
+      description: this.description,
+      type: this.type
+    };
     if (ticket.name !== '') {
       this.ticketService.updateTicket(this.userId, this.ticketId, ticket)
         .subscribe(
           (data: any) => {
-            this.router.navigate(['/user', this.userId, 'createticket', this.ticketId]);
+            this.router.navigate(['/user', this.userId, 'tickets']);
           }
         );
     } else {

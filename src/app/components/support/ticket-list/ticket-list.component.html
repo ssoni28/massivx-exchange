@@ -15,14 +15,14 @@
       </div>
 
       <div class="navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3">
-        <a [routerLink]="['/user', userId,'viewticket']"
+        <a [routerLink]="['/user', userId,'tickets']"
            class="btn btn-success pull-right my-white-color">
           View Tickets
         </a>
       </div>
 
       <div class="navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3">
-        <a [routerLink]="['/apitest']"
+        <a [routerLink]="['/user', userId, 'apitest']"
            class="btn btn-success pull-right my-white-color">
           Search Market Rate
         </a>
@@ -31,11 +31,11 @@
     </div>
   </nav>
 
-  <div class="my-container">
+  <div class="my-container my-margin">
 
     <div class="my-container row">
       <ul class="list-group">
-        <li *ngFor="let tikcet of tickets"
+        <li *ngFor="let ticket of tickets"
             class="list-group-custom-item">
           {{ticket.name}}
           <a class="pull-right"
@@ -52,7 +52,7 @@
   <nav class="navbar navbar-custom navbar-fixed-bottom">
     <div class="container-fluid">
       <p class="navbar-text pull-right">
-        <a [routerLink]="['/user', userId, 'support']">
+        <a [routerLink]="['/user', userId, 'profile']">
           <span class="glyphicon glyphicon-user my-white-color"></span>
         </a>
       </p>

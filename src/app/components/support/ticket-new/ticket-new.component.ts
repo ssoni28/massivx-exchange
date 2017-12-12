@@ -13,7 +13,7 @@ export class TicketNewComponent implements OnInit {
   userId: String;
   name: String;
   description: String;
-  type: String
+  type: String;
   errorFlag: boolean;
   errorMsg: String;
   constructor(private router: Router,

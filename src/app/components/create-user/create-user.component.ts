@@ -2,8 +2,9 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SharedService} from '../../services/shared.service.client';
 import {NgForm} from '@angular/forms';
-import {User} from '../model/user.model.client';
+
 import {UserService} from '../../services/user.service.client';
+import {User} from '../../models/user.model.client';
 
 @Component({
   selector: 'app-create-user',

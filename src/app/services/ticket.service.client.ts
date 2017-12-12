@@ -48,7 +48,7 @@ export class TicketService {
 
   updateTicket(userId: String, ticketId: String, ticket: any) {
     const url = this.newUrl + '/api/user/' + userId + '/createticket/' + ticketId;
-    return this.http.put(url, ticketId, ticket)
+    return this.http.put(url, ticket)
       .map(
         (response: Response) => {
           return response.json();

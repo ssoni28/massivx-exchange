@@ -4,7 +4,7 @@
 
     <div class="row">
       <div class="col-sm-1 col-md-1 col-lg-1">
-        <a [routerLink]="['/user', userId, 'profile']"
+        <a [routerLink]="['/user', userId, 'support']"
            class="pull-left navbar-brand my-white-color">
           <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
@@ -26,9 +26,9 @@
     <div class="col-xs-12 col-md-9 col-lg-9">
       <div *ngIf="errorFlag" class="alert alert-danger custom-style">{{errorMsg}}</div>
       <form class="form-group" #f="ngForm">
-        <label for="ticketName">Name</label>
+        <label for="name">Name</label>
         <input class="form-control"
-               id="ticketName"
+               id="name"
                required
                ngModel
                type="text"
@@ -44,7 +44,7 @@
                name="description"
                ngModel
                placeholder="Ticket Description"
-               #title="ngModel"/>
+               #description="ngModel"/>
 
         <label for="type">Type</label>
         <input class="form-control"
@@ -53,7 +53,7 @@
                name="type"
                ngModel
                placeholder="Ticket Type"
-               #title="ngModel"/>
+               #type="ngModel"/>
       </form>
     </div>
   </div>
@@ -62,7 +62,7 @@
 <nav class="navbar navbar-custom navbar-fixed-bottom">
   <div class="container-fluid">
     <p class="navbar-text pull-right">
-      <a [routerLink]="['/user', userId, 'support']">
+      <a [routerLink]="['/user', userId, 'profile']">
         <span class="glyphicon glyphicon-user my-white-color"></span>
       </a>
     </p>

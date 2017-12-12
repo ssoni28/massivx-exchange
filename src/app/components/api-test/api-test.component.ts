@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BittrexService} from '../../services/bittrex.service.client';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-api-test',
@@ -10,11 +11,18 @@ export class ApiTestComponent implements OnInit {
   searchText: String;
   objectKeys = Object.keys;
   cryptos: any;
-  constructor(private data: BittrexService){
-
+  userId: String;
+  constructor(private data: BittrexService,
+              private route: ActivatedRoute,
+              private router: Router){
   }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      if (params['userId']) {
+        this.userId = params['userId'];
+      }
+    });
   }
 
   searchCrypto() {

@@ -282,16 +282,16 @@ var APP_ROUTES = [
     { path: 'todoList', component: __WEBPACK_IMPORTED_MODULE_4__todo_list_todo_list_component__["a" /* TodoListComponent */] },
     { path: 'test', component: __WEBPACK_IMPORTED_MODULE_2__components_test_test_component__["a" /* TestComponent */] },
     { path: 'website', component: __WEBPACK_IMPORTED_MODULE_5__components_website_website_list_website_list_component__["a" /* WebsiteListComponent */] },
-    { path: 'apitest', component: __WEBPACK_IMPORTED_MODULE_6__components_api_test_api_test_component__["a" /* ApiTestComponent */] },
-    { path: 'user/:userId/createwallet', component: __WEBPACK_IMPORTED_MODULE_7__components_wallet_wallet_component__["a" /* WalletComponent */] },
+    { path: 'user/:userId/apitest', component: __WEBPACK_IMPORTED_MODULE_6__components_api_test_api_test_component__["a" /* ApiTestComponent */] },
+    { path: 'user/:userId/createwallet', component: __WEBPACK_IMPORTED_MODULE_7__components_wallet_wallet_component__["a" /* WalletComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
     { path: 'user/:userId/wallet', component: __WEBPACK_IMPORTED_MODULE_15__components_wallet_list_wallet_list_component__["a" /* WalletListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
     { path: 'user/:userId/admin/user', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_user_list_admin_user_list_component__["a" /* AdminUserListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_admin_service_client__["a" /* AdminServiceClient */]] },
     { path: 'user/:userId/admin/newuser', component: __WEBPACK_IMPORTED_MODULE_16__components_create_user_create_user_component__["a" /* CreateUserComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_admin_service_client__["a" /* AdminServiceClient */]] },
     { path: 'user/:userId/admin/updateuser/:exuserId/profile', component: __WEBPACK_IMPORTED_MODULE_17__components_admin_admin_user_update_admin_user_update_component__["a" /* AdminUserUpdateComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_12__services_admin_service_client__["a" /* AdminServiceClient */]] },
     { path: 'user/:userId/wallet/search/:walletAddress', component: __WEBPACK_IMPORTED_MODULE_18__components_wallet_list_wallet_search_wallet_search_component__["a" /* WalletSearchComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
-    { path: 'user/:userId/createticket', component: __WEBPACK_IMPORTED_MODULE_21__components_support_ticket_new_ticket_new_component__["a" /* TicketNewComponent */] },
-    { path: 'user/:userId/createticket/:ticketId', component: __WEBPACK_IMPORTED_MODULE_20__components_support_ticket_edit_ticket_edit_component__["a" /* TicketEditComponent */] },
-    { path: 'user/:userId/tickets', component: __WEBPACK_IMPORTED_MODULE_22__components_support_ticket_list_ticket_list_component__["a" /* TicketListComponent */] },
+    { path: 'user/:userId/tickets', component: __WEBPACK_IMPORTED_MODULE_22__components_support_ticket_list_ticket_list_component__["a" /* TicketListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
+    { path: 'user/:userId/createticket', component: __WEBPACK_IMPORTED_MODULE_21__components_support_ticket_new_ticket_new_component__["a" /* TicketNewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
+    { path: 'user/:userId/createticket/:ticketId', component: __WEBPACK_IMPORTED_MODULE_20__components_support_ticket_edit_ticket_edit_component__["a" /* TicketEditComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forRoot(APP_ROUTES);
@@ -531,7 +531,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/api-test/api-test.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/home']\"\n           class=\"navbar-brand pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        Market Rate\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n    <div class=\"row input-group\">\n      <input [(ngModel)]=\"searchText\"\n             type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search rate of coins in USD. Enter coin name. Example: BTC,LTC\"\n             autofocus>\n      <span class=\"input-group-btn\">\n         <a (click)=\"searchCrypto()\"\n            class=\"btn btn-default\"\n            type=\"button\">\n             <span class=\"glyphicon glyphicon-search\"></span>\n         </a>\n      </span>\n    </div>\n\n    <div class=\"row\" *ngIf=\"cryptos\">\n      <div id=\"crypto-container\" *ngFor=\"let crypto of objectKeys(cryptos)\">\n        <div class=\"row\">\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span class=\"left\">{{crypto}}</span>\n          </div>\n\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span>{{cryptos[crypto].USD | currency:'USD':true}}</span>\n          </div>\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span>{{cryptos[crypto].INR | currency:'INR':true}}</span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n      <div class=\"container-fluid\">\n        <p class=\"navbar-text pull-right\">\n          <a [routerLink]=\"['/profile']\">\n            <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n          </a>\n        </p>\n\n      </div>\n    </nav>\n  </div>\n</div>\n"
+module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'profile']\"\n           class=\"navbar-brand pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        Market Rate\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n    <div class=\"row input-group\">\n      <input [(ngModel)]=\"searchText\"\n             type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search rate of coins in USD. Enter coin name. Example: BTC,LTC\"\n             autofocus>\n      <span class=\"input-group-btn\">\n         <a (click)=\"searchCrypto()\"\n            class=\"btn btn-default\"\n            type=\"button\">\n             <span class=\"glyphicon glyphicon-search\"></span>\n         </a>\n      </span>\n    </div>\n\n    <div class=\"row\" *ngIf=\"cryptos\">\n      <div id=\"crypto-container\" *ngFor=\"let crypto of objectKeys(cryptos)\">\n        <div class=\"row\">\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span class=\"left\">{{crypto}}</span>\n          </div>\n\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span>{{cryptos[crypto].USD | currency:'USD':true}}</span>\n          </div>\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span>{{cryptos[crypto].INR | currency:'INR':true}}</span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n      <div class=\"container-fluid\">\n        <p class=\"navbar-text pull-right\">\n          <a [routerLink]=\"['/profile']\">\n            <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n          </a>\n        </p>\n\n      </div>\n    </nav>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -542,6 +542,7 @@ module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar nav
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApiTestComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_bittrex_service_client__ = __webpack_require__("../../../../../src/app/services/bittrex.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -553,12 +554,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var ApiTestComponent = (function () {
-    function ApiTestComponent(data) {
+    function ApiTestComponent(data, route, router) {
         this.data = data;
+        this.route = route;
+        this.router = router;
         this.objectKeys = Object.keys;
     }
     ApiTestComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params['userId']) {
+                _this.userId = params['userId'];
+            }
+        });
     };
     ApiTestComponent.prototype.searchCrypto = function () {
         var _this = this;
@@ -576,10 +586,10 @@ ApiTestComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/api-test/api-test.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/api-test/api-test.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_bittrex_service_client__["a" /* BittrexService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_bittrex_service_client__["a" /* BittrexService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_bittrex_service_client__["a" /* BittrexService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_bittrex_service_client__["a" /* BittrexService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
 ], ApiTestComponent);
 
-var _a;
+var _a, _b, _c;
 //# sourceMappingURL=api-test.component.js.map
 
 /***/ }),
@@ -716,7 +726,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid scene\">\n\n  <div class=\"my-container textscene\" >\n    <div class=\"row\">\n      <h1>MASSIVX</h1>\n    </div>\n  </div>\n\n  <div class=\"my-container textscene\">\n    <div class=\"row\">\n      <p>MassivX, a web application, is a cryptocurrency exchange platform that allows the exchange of one type of cryptocurrency into other. With a simple register and secured login process, a user will be able to easily trade any leading blockchain asset for other.</p>\n    </div>\n\n    <div class=\"row textscene\">\n      <h4>\n        <a routerLink=\"/apitest\">Search Market Rate</a>\n      </h4>\n    </div>\n\n    <div class=\"row\">\n      <h4>\n        <a routerLink=\"/login\">Login</a>\n      </h4>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container-fluid scene\">\n\n  <div class=\"my-container textscene\" >\n    <div class=\"row\">\n      <h1>MASSIVX</h1>\n    </div>\n  </div>\n\n  <div class=\"my-container textscene\">\n    <div class=\"row\">\n      <p>MassivX, a web application, is a cryptocurrency exchange platform that allows the exchange of one type of cryptocurrency into other. With a simple register and secured login process, a user will be able to easily trade any leading blockchain asset for other.</p>\n    </div>\n\n\n    <div class=\"row\">\n      <h4>\n        <a routerLink=\"/login\">Login</a>\n      </h4>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -764,7 +774,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".my-margin {\n  margin-top: 50px;\n}\n", ""]);
 
 // exports
 
@@ -777,7 +787,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/massivx/massivx.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n\n    <div class=\"my-container row\">\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"amount\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"amount\"\n               placeholder=\"YOU HAVE\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n          value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"exchange\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"exchange\"\n               placeholder=\"YOU GET\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n                  value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-2 col-md-2 col-lg-2\">\n        <a (click)=\"exchange()\"\n           class=\"btn btn-success btn-block\">Exchange</a>\n      </div>\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId, 'apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container my-margin\">\n\n    <div class=\"my-container row\">\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"amount\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"amount\"\n               placeholder=\"YOU HAVE\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n          value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"exchange\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"exchange\"\n               placeholder=\"YOU GET\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n                  value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-2 col-md-2 col-lg-2\">\n        <a (click)=\"exchange()\"\n           class=\"btn btn-success btn-block\">Exchange</a>\n      </div>\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -790,6 +800,7 @@ module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navba
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_bittrex_service_client__ = __webpack_require__("../../../../../src/app/services/bittrex.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -803,10 +814,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MassivxComponent = (function () {
-    function MassivxComponent(userService, sharedService, route, router) {
+    function MassivxComponent(userService, sharedService, data, route, router) {
         this.userService = userService;
         this.sharedService = sharedService;
+        this.data = data;
         this.route = route;
         this.router = router;
     }
@@ -818,9 +831,15 @@ var MassivxComponent = (function () {
             }
         });
         this.getUser();
-        this.getCurrencies();
+        this.getCoins();
     };
-    MassivxComponent.prototype.getCurrencies = function () {
+    MassivxComponent.prototype.getCoins = function () {
+        var _this = this;
+        this.data.getCoins()
+            .subscribe(function (res) {
+            _this.coins = res;
+            console.log(res);
+        });
     };
     MassivxComponent.prototype.getUser = function () {
         var _this = this;
@@ -852,10 +871,10 @@ MassivxComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/massivx/massivx.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/massivx/massivx.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__["a" /* SharedService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_shared_service_client__["a" /* SharedService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_bittrex_service_client__["a" /* BittrexService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_bittrex_service_client__["a" /* BittrexService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _e || Object])
 ], MassivxComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=massivx.component.js.map
 
 /***/ }),
@@ -881,7 +900,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/support/support-user/support-user.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createticket']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Ticket\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'tickets']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          View Tickets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n\n    <div class=\"my-container row\">\n\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'support']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createticket']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Ticket\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'tickets']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          View Tickets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId, 'apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n\n    <div class=\"my-container row\">\n\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
 
 /***/ }),
 
@@ -953,7 +972,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/support/ticket-edit/ticket-edit.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\">\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'profile']\"\n           class=\"pull-left my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        Edit Ticket\n      </div>\n      <div class=\"col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"updateTicket()\"\n           class=\"pull-right my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-ok\"></span>\n        </a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container row\">\n    <div class=\"col-xs-12 col-md-9 col-lg-9\">\n      <div *ngIf=\"errorFlag\" class=\"alert alert-danger custom-style\">{{errorMsg}}</div>\n      <form class=\"form-group\" #f=\"ngForm\">\n        <label for=\"ticketName\">Name</label>\n        <input class=\"form-control\"\n               id=\"ticketName\"\n               required\n               ngModel\n               type=\"text\"\n               name=\"name\"\n               placeholder=\"Ticket Name\"\n               #name=\"ngModel\"/>\n        <span class=\"help-block\" *ngIf=\"!name.valid && name.touched\">Please enter ticket name</span>\n\n        <label for=\"description\">Description</label>\n        <input class=\"form-control\"\n               id=\"description\"\n               type=\"text\"\n               name=\"description\"\n               ngModel\n               placeholder=\"Ticket Description\"\n               #title=\"ngModel\"/>\n\n        <label for=\"type\">Type</label>\n        <input class=\"form-control\"\n               id=\"type\"\n               type=\"text\"\n               name=\"type\"\n               ngModel\n               placeholder=\"Ticket Type\"\n               #title=\"ngModel\"/>\n        <a (click)=\"deletePage()\"\n           class=\"btn btn-danger btn-block\">Delete</a>\n      </form>\n    </div>\n  </div>\n</div>\n\n<nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a [routerLink]=\"['/user', userId, 'support']\">\n        <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n      </a>\n    </p>\n  </div>\n</nav>\n"
+module.exports = "\n<div class=\"container-fluid\">\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'support']\"\n           class=\"pull-left my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        Edit Ticket\n      </div>\n      <div class=\"col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"updateTicket()\"\n           class=\"pull-right my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-ok\"></span>\n        </a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container row\">\n    <div class=\"col-xs-12 col-md-9 col-lg-9\">\n      <div *ngIf=\"errorFlag\" class=\"alert alert-danger custom-style\">{{errorMsg}}</div>\n      <form class=\"form-group\" #f=\"ngForm\">\n        <label for=\"name\">Name</label>\n        <input [(ngModel)]=\"name\"\n               class=\"form-control\"\n               id=\"name\"\n               type=\"text\"\n               required\n               name=\"name\"\n               placeholder=\"Ticket Name\"/>\n\n        <label for=\"description\">Description</label>\n        <input [(ngModel)]=\"description\"\n               class=\"form-control\"\n               id=\"description\"\n               type=\"text\"\n               name=\"description\"\n               placeholder=\"Ticket Description\"/>\n\n        <label for=\"type\">Type</label>\n        <input [(ngModel)]=\"type\"\n               class=\"form-control\"\n               id=\"type\"\n               type=\"text\"\n               name=\"type\"\n               placeholder=\"Ticket Type\"/>\n\n        <a (click)=\"deleteTicket()\"\n           class=\"btn btn-danger btn-block\">Delete</a>\n      </form>\n    </div>\n  </div>\n</div>\n\n<nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a [routerLink]=\"['/user', userId, 'profile']\">\n        <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n      </a>\n    </p>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -966,7 +985,6 @@ module.exports = "\n<div class=\"container-fluid\">\n  <nav class=\"navbar navba
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_ticket_service_client__ = __webpack_require__("../../../../../src/app/services/ticket.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_ticket_model_client__ = __webpack_require__("../../../../../src/app/models/ticket.model.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -976,7 +994,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -1010,11 +1027,16 @@ var TicketEditComponent = (function () {
     };
     TicketEditComponent.prototype.updateTicket = function () {
         var _this = this;
-        var ticket = new __WEBPACK_IMPORTED_MODULE_4__models_ticket_model_client__["a" /* Ticket */](this.userId, this.name, this.type, this.description);
+        var ticket = {
+            userId: this.userId,
+            name: this.name,
+            description: this.description,
+            type: this.type
+        };
         if (ticket.name !== '') {
             this.ticketService.updateTicket(this.userId, this.ticketId, ticket)
                 .subscribe(function (data) {
-                _this.router.navigate(['/user', _this.userId, 'createticket', _this.ticketId]);
+                _this.router.navigate(['/user', _this.userId, 'tickets']);
             });
         }
         else {
@@ -1057,7 +1079,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".my-margin {\n  margin-top: 50px;\n}\n", ""]);
 
 // exports
 
@@ -1070,7 +1092,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/support/ticket-list/ticket-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createticket']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Ticket\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'viewticket']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          View Tickets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n\n    <div class=\"my-container row\">\n      <ul class=\"list-group\">\n        <li *ngFor=\"let tikcet of tickets\"\n            class=\"list-group-custom-item\">\n          {{ticket.name}}\n          <a class=\"pull-right\"\n             [routerLink]=\"['/user', userId, 'createticket', ticket._id]\">\n            <span class=\"glyphicon glyphicon-cog\"></span>\n          </a>\n        </li>\n      </ul>\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'support']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand custom-margin my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createticket']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Ticket\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'tickets']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          View Tickets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId, 'apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container my-margin\">\n\n    <div class=\"my-container row\">\n      <ul class=\"list-group\">\n        <li *ngFor=\"let ticket of tickets\"\n            class=\"list-group-custom-item\">\n          {{ticket.name}}\n          <a class=\"pull-right\"\n             [routerLink]=\"['/user', userId, 'createticket', ticket._id]\">\n            <span class=\"glyphicon glyphicon-cog\"></span>\n          </a>\n        </li>\n      </ul>\n\n    </div>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
 
 /***/ }),
 
@@ -1150,7 +1172,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/support/ticket-new/ticket-new.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\">\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n\n    <div class=\"row\">\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'profile']\"\n           class=\"pull-left navbar-brand my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        New Ticket\n      </div>\n      <div class=\"col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"createTicket()\"\n           class=\"pull-right navbar-brand my-white-color\">\n          <span class=\"glyphicon glyphicon-ok\"></span>\n        </a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container row\">\n    <div class=\"col-xs-12 col-md-9 col-lg-9\">\n      <div *ngIf=\"errorFlag\" class=\"alert alert-danger custom-style\">{{errorMsg}}</div>\n      <form class=\"form-group\" #f=\"ngForm\">\n        <label for=\"ticketName\">Name</label>\n        <input class=\"form-control\"\n               id=\"ticketName\"\n               required\n               ngModel\n               type=\"text\"\n               name=\"name\"\n               placeholder=\"Ticket Name\"\n               #name=\"ngModel\"/>\n        <span class=\"help-block\" *ngIf=\"!name.valid && name.touched\">Please enter ticket name</span>\n\n        <label for=\"description\">Description</label>\n        <input class=\"form-control\"\n               id=\"description\"\n               type=\"text\"\n               name=\"description\"\n               ngModel\n               placeholder=\"Ticket Description\"\n               #title=\"ngModel\"/>\n\n        <label for=\"type\">Type</label>\n        <input class=\"form-control\"\n               id=\"type\"\n               type=\"text\"\n               name=\"type\"\n               ngModel\n               placeholder=\"Ticket Type\"\n               #title=\"ngModel\"/>\n      </form>\n    </div>\n  </div>\n</div>\n\n<nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a [routerLink]=\"['/user', userId, 'support']\">\n        <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n      </a>\n    </p>\n  </div>\n</nav>\n\n"
+module.exports = "\n<div class=\"container-fluid\">\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n\n    <div class=\"row\">\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'support']\"\n           class=\"pull-left navbar-brand my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        New Ticket\n      </div>\n      <div class=\"col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"createTicket()\"\n           class=\"pull-right navbar-brand my-white-color\">\n          <span class=\"glyphicon glyphicon-ok\"></span>\n        </a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container row\">\n    <div class=\"col-xs-12 col-md-9 col-lg-9\">\n      <div *ngIf=\"errorFlag\" class=\"alert alert-danger custom-style\">{{errorMsg}}</div>\n      <form class=\"form-group\" #f=\"ngForm\">\n        <label for=\"name\">Name</label>\n        <input class=\"form-control\"\n               id=\"name\"\n               required\n               ngModel\n               type=\"text\"\n               name=\"name\"\n               placeholder=\"Ticket Name\"\n               #name=\"ngModel\"/>\n        <span class=\"help-block\" *ngIf=\"!name.valid && name.touched\">Please enter ticket name</span>\n\n        <label for=\"description\">Description</label>\n        <input class=\"form-control\"\n               id=\"description\"\n               type=\"text\"\n               name=\"description\"\n               ngModel\n               placeholder=\"Ticket Description\"\n               #description=\"ngModel\"/>\n\n        <label for=\"type\">Type</label>\n        <input class=\"form-control\"\n               id=\"type\"\n               type=\"text\"\n               name=\"type\"\n               ngModel\n               placeholder=\"Ticket Type\"\n               #type=\"ngModel\"/>\n      </form>\n    </div>\n  </div>\n</div>\n\n<nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n  <div class=\"container-fluid\">\n    <p class=\"navbar-text pull-right\">\n      <a [routerLink]=\"['/user', userId, 'profile']\">\n        <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n      </a>\n    </p>\n  </div>\n</nav>\n\n"
 
 /***/ }),
 
@@ -1454,7 +1476,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        Profile\n      </div>\n      <div class=\"navbar-brand col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"updateUser()\"\n           class=\"pull-right my-white-color\">\n          <span class=\"glyphicon glyphicon-ok my-white-color\"></span>\n        </a>\n      </div>\n\n\n    </div>\n  </nav>\n\n  <div class=\"container my-container\">\n\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"username\"\n             placeholder=\"ssoni\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"email\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             placeholder=\"soni.swati@outlook.com\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"first-name\"\n             placeholder=\"Swati\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             placeholder=\"Soni\">\n    </div>\n\n    <a (click)=\"logout()\"\n       class=\"btn btn-danger btn-block \">Logout</a>\n\n    <a class=\"btn btn-danger btn-block\"\n       (click)=\"deleteUser()\">Delete Account</a>\n\n    <div class=\"my-container\">\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-6 col-lg-6\">\n          <a [routerLink]=\"['/user', userId, 'admin', 'user']\"\n             [hidden]=!isAdmin>\n            View All Users\n          </a>\n        </div>\n        <div class=\"col-sm-6 col-md-6 col-lg-6\">\n          <a [routerLink]=\"['/user', userId, 'admin', 'newuser']\"\n             [hidden]=!isAdmin>\n            Create New User\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n</div>\n\n"
+module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a (click)=\"navigate()\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        Profile\n      </div>\n      <div class=\"navbar-brand col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"updateUser()\"\n           class=\"pull-right my-white-color\">\n          <span class=\"glyphicon glyphicon-ok my-white-color\"></span>\n        </a>\n      </div>\n\n\n    </div>\n  </nav>\n\n  <div class=\"container my-container\">\n\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"username\"\n             placeholder=\"ssoni\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"email\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             placeholder=\"soni.swati@outlook.com\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"first-name\"\n             placeholder=\"Swati\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             placeholder=\"Soni\">\n    </div>\n\n    <a (click)=\"logout()\"\n       class=\"btn btn-danger btn-block \">Logout</a>\n\n    <a class=\"btn btn-danger btn-block\"\n       (click)=\"deleteUser()\">Delete Account</a>\n\n    <div class=\"my-container\">\n      <div class=\"row\">\n        <div class=\"col-sm-6 col-md-6 col-lg-6\">\n          <a [routerLink]=\"['/user', userId, 'admin', 'user']\"\n             [hidden]=!isAdmin>\n            View All Users\n          </a>\n        </div>\n        <div class=\"col-sm-6 col-md-6 col-lg-6\">\n          <a [routerLink]=\"['/user', userId, 'admin', 'newuser']\"\n             [hidden]=!isAdmin>\n            Create New User\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n</div>\n\n"
 
 /***/ }),
 
@@ -1511,6 +1533,7 @@ var ProfileComponent = (function () {
             _this.email = currentUser.email;
             _this.roles = currentUser.roles;
             _this.isAdmin = _this.getRole();
+            _this.isSupport = _this.checkSupport();
         });
     };
     ProfileComponent.prototype.getRole = function () {
@@ -1537,7 +1560,7 @@ var ProfileComponent = (function () {
         this.user.email = this.email;
         this.userService.updateUser(this.userId, this.user)
             .subscribe(function (data) {
-            _this.router.navigate(['/user', _this.userId]);
+            _this.navigate();
         });
     };
     ProfileComponent.prototype.deleteUser = function () {
@@ -1546,6 +1569,23 @@ var ProfileComponent = (function () {
             .subscribe(function (data) {
             _this.router.navigate(['/login']);
         });
+    };
+    ProfileComponent.prototype.navigate = function () {
+        if (this.isSupport) {
+            this.router.navigate(['/user', this.userId, 'support']);
+        }
+        else {
+            this.router.navigate(['/user', this.userId]);
+        }
+    };
+    ProfileComponent.prototype.checkSupport = function () {
+        for (var _i = 0, _a = this.roles; _i < _a.length; _i++) {
+            var role = _a[_i];
+            if (role === 'SUPPORTUSER') {
+                return true;
+            }
+            return false;
+        }
     };
     return ProfileComponent;
 }());
@@ -1690,7 +1730,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/wallet-list/wallet-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\n        hidden-xs hidden-sm\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-5 col-md-5 col-lg-5\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-danger pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-danger pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n\n  <div class=\"my-container row\">\n    <ul class=\"list-group\">\n      <li *ngFor=\"let wallet of wallets\"\n          class=\"list-group-custom-item\">\n        <div>\n          <label>Wallet Address</label>\n          <a [routerLink]=\"['/user', userId, 'wallet', 'search', wallet.address]\">\n            {{wallet['address']}}\n          </a>\n          <br>\n          <label>Private Key</label>\n          {{wallet['privateKey']}}\n        </div>\n      </li>\n    </ul>\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color navbar-brand\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand custom-margin my-white-color col-sm-2 col-md-2 col-lg-2\n        hidden-xs hidden-sm\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-5 col-md-5 col-lg-5\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-danger pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-danger pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n\n  <div class=\"my-container row\">\n    <ul class=\"list-group\">\n      <li *ngFor=\"let wallet of wallets\"\n          class=\"list-group-custom-item\">\n        <div>\n          <label>Wallet Address</label>\n          <a [routerLink]=\"['/user', userId, 'wallet', 'search', wallet.address]\">\n            {{wallet['address']}}\n          </a>\n          <br>\n          <label>Private Key</label>\n          {{wallet['privateKey']}}\n        </div>\n      </li>\n    </ul>\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -2002,25 +2042,6 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/app/models/ticket.model.client.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Ticket; });
-var Ticket = (function () {
-    function Ticket(userId, name, description, type) {
-        this.userId = userId;
-        this.name = name;
-        this.description = description;
-        this.type = type;
-    }
-    return Ticket;
-}());
-
-//# sourceMappingURL=ticket.model.client.js.map
-
-/***/ }),
-
 /***/ "../../../../../src/app/services/admin.service.client.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2125,6 +2146,14 @@ var BittrexService = (function () {
         return this.http.get(url)
             .map(function (result) {
             return _this.result = result.json();
+        });
+    };
+    BittrexService.prototype.getCoins = function () {
+        var _this = this;
+        var url = 'https://www.cryptocompare.com/api/data/coinlist/';
+        return this.http.get(url)
+            .map(function (coins) {
+            return _this.result = coins.json();
         });
     };
     return BittrexService;
@@ -2285,7 +2314,7 @@ var TicketService = (function () {
     };
     TicketService.prototype.updateTicket = function (userId, ticketId, ticket) {
         var url = this.newUrl + '/api/user/' + userId + '/createticket/' + ticketId;
-        return this.http.put(url, ticketId, ticket)
+        return this.http.put(url, ticket)
             .map(function (response) {
             return response.json();
         });
@@ -2954,9 +2983,14 @@ var Todo = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: true,
-    baseUrl: ''
+    production: false,
+    baseUrl: 'http://localhost:3100'
 };
 //# sourceMappingURL=environment.js.map
 

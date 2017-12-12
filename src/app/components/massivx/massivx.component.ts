@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from '../model/user.model.client';
+
 import {UserService} from '../../services/user.service.client';
 import {SharedService} from '../../services/shared.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
+import {BittrexService} from '../../services/bittrex.service.client';
+import {User} from '../../models/user.model.client';
 
 @Component({
   selector: 'app-massivx',
@@ -20,9 +22,11 @@ export class MassivxComponent implements OnInit {
   email: String;
   roles: String[];
   isAdmin: boolean;
+  coins: any;
 
   constructor(private userService: UserService,
               private sharedService: SharedService,
+              private data: BittrexService,
               private route: ActivatedRoute,
               private router: Router) { }
 
@@ -35,11 +39,15 @@ export class MassivxComponent implements OnInit {
 
     this.getUser();
 
-    this.getCurrencies();
+    this.getCoins();
   }
 
-  getCurrencies() {
-
+  getCoins() {
+    this.data.getCoins()
+      .subscribe(res => {
+        this.coins = res;
+        console.log(res);
+      });
   }
 
   getUser() {

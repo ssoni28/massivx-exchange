@@ -36,17 +36,16 @@ const APP_ROUTES: Routes = [
   {path: 'todoList', component : TodoListComponent},
   {path: 'test', component: TestComponent},
   {path: 'website', component: WebsiteListComponent},
-  {path: 'apitest', component: ApiTestComponent},
-  {path: 'user/:userId/createwallet', component: WalletComponent},
+  {path: 'user/:userId/apitest', component: ApiTestComponent},
+  {path: 'user/:userId/createwallet', component: WalletComponent, canActivate: [AuthenticationService]},
   {path: 'user/:userId/wallet', component: WalletListComponent, canActivate: [AuthenticationService]},
   {path: 'user/:userId/admin/user', component: AdminUserListComponent, canActivate: [AdminServiceClient] },
   {path: 'user/:userId/admin/newuser', component: CreateUserComponent, canActivate: [AdminServiceClient] },
   {path: 'user/:userId/admin/updateuser/:exuserId/profile', component: AdminUserUpdateComponent, canActivate: [AdminServiceClient]},
   {path: 'user/:userId/wallet/search/:walletAddress', component: WalletSearchComponent, canActivate: [AuthenticationService]},
-  {path: 'user/:userId/createticket', component: TicketNewComponent},
-  {path: 'user/:userId/createticket/:ticketId', component: TicketEditComponent},
-  {path: 'user/:userId/tickets', component: TicketListComponent},
-
+  {path: 'user/:userId/tickets', component: TicketListComponent, canActivate: [AuthenticationService]},
+  {path: 'user/:userId/createticket', component: TicketNewComponent, canActivate: [AuthenticationService]},
+  {path: 'user/:userId/createticket/:ticketId', component: TicketEditComponent, canActivate: [AuthenticationService]}
 ];
 
 // Export the routes as module providers

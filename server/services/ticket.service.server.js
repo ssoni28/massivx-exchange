@@ -47,13 +47,12 @@ module.exports = function(app) {
   }
 
   function findTicketById(req, res) {
-
     var ticketId = req.params['ticketId'];
     ticketModel
       .findTicketById(ticketId)
       .then(function (ticket) {
         if (ticket) {
-          res.json(user);
+          res.json(ticket);
         } else {
           res.json({});
         }

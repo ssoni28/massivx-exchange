@@ -7,7 +7,7 @@
         MassivX
       </div>
 
-      <div class="navbar-brand col-sm-3 col-md-3 col-lg-3">
+      <div class="navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3">
         <a [routerLink]="['/user', userId,'createticket']"
            class="btn btn-success pull-right my-white-color">
           Create Ticket
@@ -22,7 +22,7 @@
       </div>
 
       <div class="navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3">
-        <a [routerLink]="['/apitest']"
+        <a [routerLink]="['/user', userId, 'apitest']"
            class="btn btn-success pull-right my-white-color">
           Search Market Rate
         </a>
@@ -43,7 +43,7 @@
   <nav class="navbar navbar-custom navbar-fixed-bottom">
     <div class="container-fluid">
       <p class="navbar-text pull-right">
-        <a [routerLink]="['/user', userId, 'support']">
+        <a [routerLink]="['/user', userId, 'profile']">
           <span class="glyphicon glyphicon-user my-white-color"></span>
         </a>
       </p>

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from '../../model/user.model.client';
+
 import {UserService} from '../../../services/user.service.client';
 import {SharedService} from '../../../services/shared.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
+import {User} from '../../../models/user.model.client';
 
 @Component({
   selector: 'app-admin-user-update',
