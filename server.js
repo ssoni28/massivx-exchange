@@ -18,6 +18,8 @@ var passport = require('passport');
 app.use(passport.initialize());
 app.use(passport.session());
 
+var io = require('socket.io');
+
 // Point static path to dist -- For building -- REMOVE
 app.use(express.static(path.join(__dirname, 'dist')));
 
@@ -42,6 +44,7 @@ serverSide(app);
 
 var myServer = require("./server/app");
 myServer(app);
+
 
 require('./todo/app')(app);
 

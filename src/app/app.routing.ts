@@ -23,6 +23,8 @@ import {SupportUserComponent} from './components/support/support-user/support-us
 import {TicketEditComponent} from './components/support/ticket-edit/ticket-edit.component';
 import {TicketNewComponent} from './components/support/ticket-new/ticket-new.component';
 import {TicketListComponent} from './components/support/ticket-list/ticket-list.component';
+import {ForumComponent} from './components/forum/forum.component';
+import {TransactionListComponent} from './components/transaction/transaction-list/transaction-list.component';
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -45,7 +47,9 @@ const APP_ROUTES: Routes = [
   {path: 'user/:userId/wallet/search/:walletAddress', component: WalletSearchComponent, canActivate: [AuthenticationService]},
   {path: 'user/:userId/tickets', component: TicketListComponent, canActivate: [AuthenticationService]},
   {path: 'user/:userId/createticket', component: TicketNewComponent, canActivate: [AuthenticationService]},
-  {path: 'user/:userId/createticket/:ticketId', component: TicketEditComponent, canActivate: [AuthenticationService]}
+  {path: 'user/:userId/createticket/:ticketId', component: TicketEditComponent, canActivate: [AuthenticationService]},
+  {path: 'user/:userId/forum', component: ForumComponent, canActivate: [AuthenticationService]},
+  {path: 'user/:userId/transactions', component: TransactionListComponent, canActivate: [AuthenticationService]}
 ];
 
 // Export the routes as module providers

@@ -35,6 +35,10 @@ function findAllWalletsForUser(userId) {
     .populate('userId')
     .exec();
 }
+
+function deleteWallet(walletId) {
+  return walletModel.deleteOne({_id: walletId});
+}
 /*
 function findUserById(userId) {
   return userModel.findById(userId);

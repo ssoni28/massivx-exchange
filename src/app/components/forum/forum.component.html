@@ -1,0 +1,75 @@
+<div class="container-fluid">
+
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class=" container row">
+
+      <div class="navbar-brand col-sm-1 col-md-1 col-lg-1">
+        <a [routerLink]="['/user', userId]"
+           class="pull-left my-white-color">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11">
+        User List
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container my-container">
+
+    <ul class="list-group">
+      <li *ngFor="let user of exchangeUsers"
+          class="list-group-custom-item">
+        <div class="row">
+          {{user.username}}
+          <a (click)="follow(user)"
+             class="pull-right btn btn-success">
+            Follow
+          </a>
+        </div>
+      </li>
+    </ul>
+
+    <hr>
+    <div class="row">
+
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Followed By</label>
+        <hr>
+        <ul>
+          <li *ngFor="let followBy of followedBy"
+              value="{{followBy}}" disabled>
+            {{followBy}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="pull-right col-sm-4 col-md-4 col-lg-4">
+        <label>Follows</label>
+        <hr>
+        <ul>
+          <li *ngFor="let follow of follows"
+              value="{{follow}}" disabled>
+            {{follow}}
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <nav class="navbar navbar-custom navbar-fixed-bottom">
+    <div class="container-fluid">
+      <p class="navbar-text pull-right">
+        <a [routerLink]="['/user', userId, 'profile']">
+          <span class="glyphicon glyphicon-user my-white-color"></span>
+        </a>
+      </p>
+    </div>
+  </nav>
+
+</div>

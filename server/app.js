@@ -8,5 +8,6 @@ module.exports = function (app) {
   require("./services/wallet.service.server.js") (app);
   require("./services/user.service.server.js") (app);
   require("./services/ticket.service.server.js") (app);
+  require("./services/transaction.service.server.js") (app);
 };
 

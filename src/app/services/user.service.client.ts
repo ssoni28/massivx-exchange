@@ -180,6 +180,14 @@ export class UserService {
       });
   }
 
+  findAllExUsers(userId: String) {
+    const url = this.newUrl + '/api/user/' + userId + '/forum';
+    return this.http.get(url)
+      .map((res: Response) => {
+        return res.json();
+      });
+  }
+
   isAdmin() {
     const url = this.newUrl + '/api/admin/isAdmin';
     this.options.withCredentials = true;

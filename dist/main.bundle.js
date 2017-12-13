@@ -117,12 +117,18 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_support_ticket_edit_ticket_edit_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-edit/ticket-edit.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_support_ticket_list_ticket_list_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-list/ticket-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_ticket_service_client__ = __webpack_require__("../../../../../src/app/services/ticket.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__components_forum_forum_component__ = __webpack_require__("../../../../../src/app/components/forum/forum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__components_transaction_transaction_list_transaction_list_component__ = __webpack_require__("../../../../../src/app/components/transaction/transaction-list/transaction-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__services_transaction_service_client__ = __webpack_require__("../../../../../src/app/services/transaction.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -191,7 +197,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_33__components_support_support_user_support_user_component__["a" /* SupportUserComponent */],
             __WEBPACK_IMPORTED_MODULE_34__components_support_ticket_new_ticket_new_component__["a" /* TicketNewComponent */],
             __WEBPACK_IMPORTED_MODULE_35__components_support_ticket_edit_ticket_edit_component__["a" /* TicketEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_36__components_support_ticket_list_ticket_list_component__["a" /* TicketListComponent */]
+            __WEBPACK_IMPORTED_MODULE_36__components_support_ticket_list_ticket_list_component__["a" /* TicketListComponent */],
+            __WEBPACK_IMPORTED_MODULE_38__components_forum_forum_component__["a" /* ForumComponent */],
+            __WEBPACK_IMPORTED_MODULE_39__components_transaction_transaction_list_transaction_list_component__["a" /* TransactionListComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -208,6 +216,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_15__services_bittrex_service_client__["a" /* BittrexService */],
             __WEBPACK_IMPORTED_MODULE_18__services_wallet_service_client__["a" /* WalletService */],
             __WEBPACK_IMPORTED_MODULE_37__services_ticket_service_client__["a" /* TicketService */],
+            __WEBPACK_IMPORTED_MODULE_40__services_transaction_service_client__["a" /* TransactionService */],
             __WEBPACK_IMPORTED_MODULE_32__services_wallet_search_service_client__["a" /* WalletSearchServiceClient */],
             __WEBPACK_IMPORTED_MODULE_25__services_admin_service_client__["a" /* AdminServiceClient */],
             __WEBPACK_IMPORTED_MODULE_26__services_authentication_service_client__["a" /* AuthenticationService */]],
@@ -247,6 +256,10 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_support_ticket_edit_ticket_edit_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-edit/ticket-edit.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_support_ticket_new_ticket_new_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-new/ticket-new.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_support_ticket_list_ticket_list_component__ = __webpack_require__("../../../../../src/app/components/support/ticket-list/ticket-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_forum_forum_component__ = __webpack_require__("../../../../../src/app/components/forum/forum.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_transaction_transaction_list_transaction_list_component__ = __webpack_require__("../../../../../src/app/components/transaction/transaction-list/transaction-list.component.ts");
+
+
 
 
 
@@ -291,7 +304,9 @@ var APP_ROUTES = [
     { path: 'user/:userId/wallet/search/:walletAddress', component: __WEBPACK_IMPORTED_MODULE_18__components_wallet_list_wallet_search_wallet_search_component__["a" /* WalletSearchComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
     { path: 'user/:userId/tickets', component: __WEBPACK_IMPORTED_MODULE_22__components_support_ticket_list_ticket_list_component__["a" /* TicketListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
     { path: 'user/:userId/createticket', component: __WEBPACK_IMPORTED_MODULE_21__components_support_ticket_new_ticket_new_component__["a" /* TicketNewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
-    { path: 'user/:userId/createticket/:ticketId', component: __WEBPACK_IMPORTED_MODULE_20__components_support_ticket_edit_ticket_edit_component__["a" /* TicketEditComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] }
+    { path: 'user/:userId/createticket/:ticketId', component: __WEBPACK_IMPORTED_MODULE_20__components_support_ticket_edit_ticket_edit_component__["a" /* TicketEditComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
+    { path: 'user/:userId/forum', component: __WEBPACK_IMPORTED_MODULE_23__components_forum_forum_component__["a" /* ForumComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] },
+    { path: 'user/:userId/transactions', component: __WEBPACK_IMPORTED_MODULE_24__components_transaction_transaction_list_transaction_list_component__["a" /* TransactionListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_13__services_authentication_service_client__["a" /* AuthenticationService */]] }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forRoot(APP_ROUTES);
@@ -320,7 +335,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/admin-user-list/admin-user-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-8 col-md-8 col-lg-8\">\n        User List\n      </div>\n\n      <div class=\"navbar-brand col-sm-2 col-md-2 col-lg-2\">\n        <a [routerLink]=\"['/user', userId, 'admin', 'newuser']\"\n           class=\"pull-right my-white-color\">\n          <span class=\"glyphicon glyphicon-plus\"></span>\n        </a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n    <ul class=\"list-group\">\n      <li *ngFor=\"let user of users\"\n          class=\"list-group-custom-item\">\n        {{user.username}}\n        <a class=\"pull-right\"\n           [routerLink]=\"['/user', userId, 'admin', 'updateuser', user._id, 'profile']\">\n          <span class=\"glyphicon glyphicon-cog\"></span>\n        </a>\n      </li>\n    </ul>\n  </div>\n\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"container row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-8 col-md-8 col-lg-8\">\n        User List\n      </div>\n\n      <div class=\"navbar-brand col-sm-2 col-md-2 col-lg-2\">\n        <a [routerLink]=\"['/user', userId, 'admin', 'newuser']\"\n           class=\"pull-right my-white-color\">\n          <span class=\"glyphicon glyphicon-plus\"></span>\n        </a>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"container my-container\">\n    <ul class=\"list-group\">\n      <li *ngFor=\"let user of users\"\n          class=\"list-group-custom-item\">\n        {{user.username}}\n        <a class=\"pull-right\"\n           [routerLink]=\"['/user', userId, 'admin', 'updateuser', user._id, 'profile']\">\n          <span class=\"glyphicon glyphicon-cog\"></span>\n        </a>\n      </li>\n    </ul>\n  </div>\n\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
 
 /***/ }),
 
@@ -400,7 +415,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/admin/admin-user-update/admin-user-update.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'admin', 'user']\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        Update User\n      </div>\n      <div class=\"navbar-brand col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"updateUser()\"\n           class=\"pull-right my-white-color\">\n          <span class=\"glyphicon glyphicon-ok my-white-color\"></span>\n        </a>\n      </div>\n\n\n    </div>\n  </nav>\n\n  <div class=\"container my-container\">\n\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"username\"\n             placeholder=\"ssoni\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"email\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             placeholder=\"soni.swati@outlook.com\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"first-name\"\n             placeholder=\"Swati\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             placeholder=\"Soni\">\n    </div>\n\n    <a class=\"btn btn-danger btn-block\"\n       (click)=\"deleteUser()\">Delete Account</a>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">>\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n</div>\n\n"
+module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"container row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'admin', 'user']\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        Update User\n      </div>\n      <div class=\"navbar-brand col-sm-9 col-md-9 col-lg-9\">\n        <a (click)=\"updateUser()\"\n           class=\"pull-right my-white-color\">\n          <span class=\"glyphicon glyphicon-ok my-white-color\"></span>\n        </a>\n      </div>\n\n\n    </div>\n  </nav>\n\n  <div class=\"container my-container\">\n\n    <div class=\"form-group\">\n      <label for=\"username\">Username</label>\n      <input [(ngModel)]=\"username\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"username\"\n             placeholder=\"ssoni\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"email\">Email address</label>\n      <input [(ngModel)]=\"email\"\n             type=\"email\"\n             class=\"form-control\"\n             id=\"email\"\n             placeholder=\"soni.swati@outlook.com\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"first-name\">First Name</label>\n      <input [(ngModel)]=\"firstName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"first-name\"\n             placeholder=\"Swati\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"last-name\">Last Name</label>\n      <input [(ngModel)]=\"lastName\"\n             type=\"text\"\n             class=\"form-control\"\n             id=\"last-name\"\n             placeholder=\"Soni\">\n    </div>\n\n    <a class=\"btn btn-danger btn-block\"\n       (click)=\"deleteUser()\">Delete Account</a>\n\n  </div>\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">>\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n</div>\n\n"
 
 /***/ }),
 
@@ -531,7 +546,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/api-test/api-test.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'profile']\"\n           class=\"navbar-brand pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        Market Rate\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n    <div class=\"row input-group\">\n      <input [(ngModel)]=\"searchText\"\n             type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search rate of coins in USD. Enter coin name. Example: BTC,LTC\"\n             autofocus>\n      <span class=\"input-group-btn\">\n         <a (click)=\"searchCrypto()\"\n            class=\"btn btn-default\"\n            type=\"button\">\n             <span class=\"glyphicon glyphicon-search\"></span>\n         </a>\n      </span>\n    </div>\n\n    <div class=\"row\" *ngIf=\"cryptos\">\n      <div id=\"crypto-container\" *ngFor=\"let crypto of objectKeys(cryptos)\">\n        <div class=\"row\">\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span class=\"left\">{{crypto}}</span>\n          </div>\n\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span>{{cryptos[crypto].USD | currency:'USD':true}}</span>\n          </div>\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span>{{cryptos[crypto].INR | currency:'INR':true}}</span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n      <div class=\"container-fluid\">\n        <p class=\"navbar-text pull-right\">\n          <a [routerLink]=\"['/profile']\">\n            <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n          </a>\n        </p>\n\n      </div>\n    </nav>\n  </div>\n</div>\n"
+module.exports = "\n<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"container row\">\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId, 'profile']\"\n           class=\"navbar-brand pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        Market Rate\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"my-container\">\n    <div class=\"row input-group\">\n      <input [(ngModel)]=\"searchText\"\n             type=\"text\"\n             class=\"form-control\"\n             placeholder=\"Search rate of coins in USD. Enter coin name. Example: BTC,LTC\"\n             autofocus>\n      <span class=\"input-group-btn\">\n         <a (click)=\"searchCrypto()\"\n            class=\"btn btn-default\"\n            type=\"button\">\n             <span class=\"glyphicon glyphicon-search\"></span>\n         </a>\n      </span>\n    </div>\n\n    <div class=\"row\" *ngIf=\"cryptos\">\n      <div id=\"crypto-container\" *ngFor=\"let crypto of objectKeys(cryptos)\">\n        <div class=\"row\">\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span class=\"left\">{{crypto}}</span>\n          </div>\n\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span>{{cryptos[crypto].USD | currency:'USD':true}}</span>\n          </div>\n          <div class=\"col-sm-4 col-md-4 col-lg-4\">\n            <span>{{cryptos[crypto].INR | currency:'INR':true}}</span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n      <div class=\"container-fluid\">\n        <p class=\"navbar-text pull-right\">\n          <a [routerLink]=\"['/profile']\">\n            <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n          </a>\n        </p>\n\n      </div>\n    </nav>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -705,6 +720,106 @@ var _a, _b, _c, _d, _e;
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/forum/forum.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/forum/forum.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\" container row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        User List\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"container my-container\">\n\n    <ul class=\"list-group\">\n      <li *ngFor=\"let user of exchangeUsers\"\n          class=\"list-group-custom-item\">\n        <div class=\"row\">\n          {{user.username}}\n          <a (click)=\"follow(user)\"\n             class=\"pull-right btn btn-success\">\n            Follow\n          </a>\n        </div>\n      </li>\n    </ul>\n\n    <hr>\n    <div class=\"row\">\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <label>Followed By</label>\n        <hr>\n        <ul>\n          <li *ngFor=\"let followBy of followedBy\"\n              value=\"{{followBy}}\" disabled>\n            {{followBy}}\n          </li>\n        </ul>\n      </div>\n\n      <div class=\"pull-right col-sm-4 col-md-4 col-lg-4\">\n        <label>Follows</label>\n        <hr>\n        <ul>\n          <li *ngFor=\"let follow of follows\"\n              value=\"{{follow}}\" disabled>\n            {{follow}}\n          </li>\n        </ul>\n      </div>\n\n    </div>\n\n  </div>\n\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/forum/forum.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForumComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ForumComponent = (function () {
+    function ForumComponent(userService, route, router) {
+        this.userService = userService;
+        this.route = route;
+        this.router = router;
+    }
+    ForumComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params['userId']) {
+                _this.userId = params['userId'];
+            }
+        });
+        this.userService
+            .findAllExUsers(this.userId)
+            .subscribe(function (users) {
+            _this.exchangeUsers = users;
+        });
+        this.getUser();
+    };
+    ForumComponent.prototype.getUser = function () {
+        var _this = this;
+        this.userService.findUserById(this.userId)
+            .subscribe(function (currentUser) {
+            _this.currentUser = currentUser;
+            _this.followedBy = currentUser.followedBy;
+            _this.follows = currentUser.follows;
+        });
+    };
+    ForumComponent.prototype.follow = function (user) {
+        user.followedBy.push(this.userId);
+        this.currentUser.follows.push(user._id);
+        this.userService.updateUser(this.userId, this.currentUser)
+            .subscribe(function (data) {
+        });
+        this.userService.updateUser(user._id, user)
+            .subscribe(function (data) {
+        });
+    };
+    return ForumComponent;
+}());
+ForumComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-forum',
+        template: __webpack_require__("../../../../../src/app/components/forum/forum.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/forum/forum.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
+], ForumComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=forum.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/home/home.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -787,7 +902,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/massivx/massivx.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId, 'apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"my-container my-margin\">\n\n    <div class=\"my-container row\">\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"amount\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"amount\"\n               placeholder=\"YOU HAVE\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n                  value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-4 col-md-4 col-lg-4\">\n        <input [(ngModel)]=\"exchange\"\n               type=\"text\"\n               class=\"form-control\"\n               id=\"exchange\"\n               placeholder=\"YOU GET\"/>\n      </div>\n\n      <div class=\"col-sm-1 col-md-1 col-lg-1\">\n        <select>\n          <option *ngFor=\"let currency of currencies\"\n                  value=\"{{currency}}\">\n            {{currency}}\n          </option>\n        </select>\n      </div>\n\n      <div class=\"col-sm-2 col-md-2 col-lg-2\">\n        <a (click)=\"exchange()\"\n           class=\"btn btn-success btn-block\">Exchange</a>\n      </div>\n\n    </div>\n\n\n    <div class=\" container my-container row\">\n\n      <div class=\"row my-align\">\n        <h1>Bitcoin 24 hour Stats</h1>\n      </div>\n\n      <div class=\"row\">\n        <div class=\"col-xs-6\">\n\n          <div class=\"row my-align\">\n            <label>Block Summary</label>\n          </div>\n          <hr>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Blocks Mined</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>{{stats.n_blocks_mined}}</label>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Time Between Blocks</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>{{stats.minutes_between_blocks}}</label>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Bitcoins Mined</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>{{stats.n_btc_mined}}</label>\n            </div>\n          </div>\n\n        </div>\n\n\n        <div class=\"col-xs-6\">\n\n          <div class=\"row my-align\">\n            <label>Market Summary</label>\n          </div>\n          <hr>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Market Price</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>\n                {{stats.market_price_usd}}\n              </label>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Trade Volume</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>\n                {{stats.trade_volume_usd}}  USD\n              </label>\n            </div>\n          </div>\n\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Trade Volume</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>\n                {{stats.trade_volume_btc}}  BTC\n              </label>\n            </div>\n          </div>\n        </div>\n\n\n      </div>\n\n    </div>\n\n    <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n      <div class=\"container-fluid\">\n        <p class=\"navbar-text pull-right\">\n          <a [routerLink]=\"['/user', userId, 'profile']\">\n            <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n          </a>\n        </p>\n      </div>\n    </nav>\n\n\n\n  </div>\n"
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"container row\">\n\n      <div class=\"navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3\">\n        MassivX\n      </div>\n\n      <div class=\"navbar-brand col-sm-2 col-md-2 col-lg-2\">\n        <a [routerLink]=\"['/user', userId,'createwallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Create Wallet\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        <a [routerLink]=\"['/user', userId,'wallet']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          My Wallets\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2\">\n        <a [routerLink]=\"['/user', userId,'transactions']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          View Transactions\n        </a>\n      </div>\n\n      <div class=\"navbar-brand pull-right my-white-color col-sm-3 col-md-3 col-lg-3\">\n        <a [routerLink]=\"['/user', userId, 'apitest']\"\n           class=\"btn btn-success pull-right my-white-color\">\n          Search Market Rate\n        </a>\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"container my-container my-margin\">\n\n    <div class=\"my-container row\">\n      <form class=\"form-group\" #f=\"ngForm\">\n        <div class=\"col-sm-4 col-md-4 col-lg-4\">\n          <input  class=\"form-control\"\n                  id=\"amount\"\n                  type=\"text\"\n                  name=\"amount\"\n                  ngModel\n                  placeholder=\"YOU HAVE\"\n                  #amount=\"ngModel\"/>\n        </div>\n\n        <div class=\"col-sm-1 col-md-1 col-lg-1\">\n          <select  class=\"form-control\"\n                   id=\"from\"\n                   name=\"from\"\n                   ngModel\n                   #from=\"ngModel\">\n            <option value=\"USD\">\n              USD\n            </option>\n            <option value=\"EUR\">\n              EUR\n            </option>\n            <option value=\"JPY\">\n              JPY\n            </option>\n          </select>\n        </div>\n\n        <div class=\"col-sm-4 col-md-4 col-lg-4\">\n          <input class=\"form-control\"\n                 id=\"exchangeAmount\"\n                 type=\"text\"\n                 name=\"exchangeAmount\"\n                 ngModel\n                 placeholder=\"YOU GET\"\n                 #exchangeAmount=\"ngModel\"/>\n        </div>\n\n        <div class=\"col-sm-1 col-md-1 col-lg-1\">\n          <select class=\"form-control\"\n                  id=\"to\"\n                  name=\"to\"\n                  ngModel\n                  #to=\"ngModel\">\n            <option value=\"BTC\">\n              BTC\n            </option>\n          </select>\n        </div>\n\n        <div class=\"col-sm-2 col-md-2 col-lg-2\">\n          <a (click)=\"exchange()\"\n             class=\"btn btn-success btn-block\">Exchange</a>\n        </div>\n      </form>\n    </div>\n  </div>\n\n    <div class=\" container my-container row\">\n\n      <div class=\"row my-align\">\n        <h1>Bitcoin 24 hour Stats</h1>\n      </div>\n\n      <div class=\"row\">\n        <div class=\"col-xs-6\">\n\n          <div class=\"row my-align\">\n            <label>Block Summary</label>\n          </div>\n          <hr>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Blocks Mined</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>{{stats.n_blocks_mined}}</label>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Time Between Blocks</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>{{stats.minutes_between_blocks}}</label>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Bitcoins Mined</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>{{stats.n_btc_mined}}</label>\n            </div>\n          </div>\n\n        </div>\n\n\n        <div class=\"col-xs-6\">\n\n          <div class=\"row my-align\">\n            <label>Market Summary</label>\n          </div>\n          <hr>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Market Price</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>\n                {{stats.market_price_usd}}\n              </label>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Trade Volume</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>\n                {{stats.trade_volume_usd}}  USD\n              </label>\n            </div>\n          </div>\n\n\n          <div class=\"row\">\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>Trade Volume</label>\n            </div>\n            <div class=\"col-xs-3 col-md-3 col-lg-3\">\n              <label>\n                {{stats.trade_volume_btc}}  BTC\n              </label>\n            </div>\n          </div>\n        </div>\n\n\n      </div>\n\n    </div>\n\n    <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n      <div class=\"container-fluid\">\n\n        <p class=\"navbar-text pull-left\">\n          <a [routerLink]=\"['/user', userId, 'forum']\"\n             class=\"btn btn-success\">\n            Forum\n          </a>\n        </p>\n\n        <p class=\"navbar-text pull-right\">\n          <a [routerLink]=\"['/user', userId, 'profile']\">\n            <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n          </a>\n        </p>\n\n      </div>\n    </nav>\n\n\n\n  </div>\n"
 
 /***/ }),
 
@@ -801,6 +916,8 @@ module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navba
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_bittrex_service_client__ = __webpack_require__("../../../../../src/app/services/bittrex.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_wallet_search_service_client__ = __webpack_require__("../../../../../src/app/services/wallet-search.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_transaction_service_client__ = __webpack_require__("../../../../../src/app/services/transaction.service.client.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -815,10 +932,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var MassivxComponent = (function () {
-    function MassivxComponent(userService, walletService, data, route, router) {
+    function MassivxComponent(userService, walletService, transactionService, data, route, router) {
         this.userService = userService;
         this.walletService = walletService;
+        this.transactionService = transactionService;
         this.data = data;
         this.route = route;
         this.router = router;
@@ -863,18 +983,41 @@ var MassivxComponent = (function () {
             return false;
         }
     };
+    MassivxComponent.prototype.exchange = function () {
+        var _this = this;
+        this.from = this.transactionForm.value.from;
+        this.to = this.transactionForm.value.to;
+        this.amount = this.transactionForm.value.amount;
+        this.exchangeAmount = this.transactionForm.value.exchangeAmount;
+        var transaction = {
+            userId: this.userId,
+            from: this.from,
+            to: this.to,
+            fromAmount: this.amount,
+            toAmount: this.exchangeAmount
+        };
+        this.transactionService
+            .createTransaction(transaction, this.userId)
+            .subscribe(function (transaction) {
+            _this.router.navigate(['/user', _this.userId, 'transactions']);
+        });
+    };
     return MassivxComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('f'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* NgForm */]) === "function" && _a || Object)
+], MassivxComponent.prototype, "transactionForm", void 0);
 MassivxComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-massivx',
         template: __webpack_require__("../../../../../src/app/components/massivx/massivx.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/massivx/massivx.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_wallet_search_service_client__["a" /* WalletSearchServiceClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_wallet_search_service_client__["a" /* WalletSearchServiceClient */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_bittrex_service_client__["a" /* BittrexService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_bittrex_service_client__["a" /* BittrexService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_wallet_search_service_client__["a" /* WalletSearchServiceClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_wallet_search_service_client__["a" /* WalletSearchServiceClient */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__services_transaction_service_client__["a" /* TransactionService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__services_transaction_service_client__["a" /* TransactionService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_bittrex_service_client__["a" /* BittrexService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_bittrex_service_client__["a" /* BittrexService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _g || Object])
 ], MassivxComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=massivx.component.js.map
 
 /***/ }),
@@ -1342,6 +1485,90 @@ TestComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=test.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/transaction/transaction-list/transaction-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/transaction/transaction-list/transaction-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\n\n  <nav class=\"navbar navbar-custom navbar-fixed-top\">\n    <div class=\"container row\">\n\n      <div class=\"navbar-brand col-sm-1 col-md-1 col-lg-1\">\n        <a [routerLink]=\"['/user', userId]\"\n           class=\"pull-left my-white-color\">\n          <span class=\"glyphicon glyphicon-chevron-left\"></span>\n        </a>\n      </div>\n\n      <div class=\"navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11\">\n        Transaction History\n      </div>\n\n    </div>\n  </nav>\n\n  <div class=\"container my-container\">\n    <ul class=\"list-group\">\n      <li *ngFor=\"let transaction of transactions\"\n          class=\"list-group-custom-item\">\n\n        <div class=\"row\">\n          <label>{{transaction.date}}</label>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"row\">\n            <label>From</label>\n          </div>\n          <div class=\"col-sm-6 col-md-6 col-lg-6\">\n            {{transaction.fromAmount}}\n          </div>\n          <div class=\"col-sm-6 col-md-6 col-lg-6\">\n            {{transaction.from}}\n          </div>\n        </div>\n\n\n        <div class=\"row\">\n          <div class=\"row\">\n            <label>To</label>\n          </div>\n          <div class=\"col-sm-6 col-md-6 col-lg-6\">\n            {{transaction.toAmount}}\n          </div>\n          <div class=\"col-sm-6 col-md-6 col-lg-6\">\n            {{transaction.to}}\n          </div>\n        </div>\n        <hr>\n      </li>\n    </ul>\n  </div>\n\n\n  <nav class=\"navbar navbar-custom navbar-fixed-bottom\">\n    <div class=\"container-fluid\">\n      <p class=\"navbar-text pull-right\">\n        <a [routerLink]=\"['/user', userId, 'profile']\">\n          <span class=\"glyphicon glyphicon-user my-white-color\"></span>\n        </a>\n      </p>\n    </div>\n  </nav>\n\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/transaction/transaction-list/transaction-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__ = __webpack_require__("../../../../../src/app/services/user.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_transaction_service_client__ = __webpack_require__("../../../../../src/app/services/transaction.service.client.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var TransactionListComponent = (function () {
+    function TransactionListComponent(userService, route, router, transactionService) {
+        this.userService = userService;
+        this.route = route;
+        this.router = router;
+        this.transactionService = transactionService;
+    }
+    TransactionListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params['userId']) {
+                _this.userId = params['userId'];
+            }
+        });
+        this.transactionService
+            .findTransactionByUserId(this.userId)
+            .subscribe(function (transactions) {
+            console.log(transactions);
+            _this.transactions = transactions;
+        });
+    };
+    return TransactionListComponent;
+}());
+TransactionListComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-transaction-list',
+        template: __webpack_require__("../../../../../src/app/components/transaction/transaction-list/transaction-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/transaction/transaction-list/transaction-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_user_service_client__["a" /* UserService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_transaction_service_client__["a" /* TransactionService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_transaction_service_client__["a" /* TransactionService */]) === "function" && _d || Object])
+], TransactionListComponent);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=transaction-list.component.js.map
 
 /***/ }),
 
@@ -2406,6 +2633,78 @@ var _a;
 
 /***/ }),
 
+/***/ "../../../../../src/app/services/transaction.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+// injecting service into module
+var TransactionService = (function () {
+    function TransactionService(http, router) {
+        this.http = http;
+        this.router = router;
+        this.newUrl = __WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].baseUrl;
+    }
+    TransactionService.prototype.createTransaction = function (transaction, userId) {
+        var url = this.newUrl + '/api/user/' + userId + '/transaction';
+        return this.http.post(url, transaction)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    TransactionService.prototype.findTransactionByUserId = function (userId) {
+        var url = this.newUrl + '/api/user/' + userId + '/transactions';
+        return this.http.get(url)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    TransactionService.prototype.updateTransaction = function (userId, transaction, transactionId) {
+        var url = this.newUrl + '/api/user/' + userId + '/transaction' + transactionId;
+        return this.http.put(url, transaction)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    TransactionService.prototype.deleteTransaction = function (userId, transaction, transactionId) {
+        var url = this.newUrl + '/api/user/' + userId + '/transaction' + transactionId;
+        return this.http.delete(url)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    return TransactionService;
+}());
+TransactionService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], TransactionService);
+
+var _a, _b;
+//# sourceMappingURL=transaction.service.client.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/user.service.client.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2562,6 +2861,13 @@ var UserService = (function () {
         var url = this.newUrl + '/api/user/' + userId + '/admin/user';
         this.options.withCredentials = true;
         return this.http.get(url, this.options)
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    UserService.prototype.findAllExUsers = function (userId) {
+        var url = this.newUrl + '/api/user/' + userId + '/forum';
+        return this.http.get(url)
             .map(function (res) {
             return res.json();
         });
@@ -2984,9 +3290,14 @@ var Todo = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: true,
-    baseUrl: ''
+    production: false,
+    baseUrl: 'http://localhost:3100'
 };
 //# sourceMappingURL=environment.js.map
 

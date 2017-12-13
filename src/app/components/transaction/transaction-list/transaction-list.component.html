@@ -1,0 +1,69 @@
+<div class="container-fluid">
+
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container row">
+
+      <div class="navbar-brand col-sm-1 col-md-1 col-lg-1">
+        <a [routerLink]="['/user', userId]"
+           class="pull-left my-white-color">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-11 col-md-11 col-lg-11">
+        Transaction History
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container my-container">
+    <ul class="list-group">
+      <li *ngFor="let transaction of transactions"
+          class="list-group-custom-item">
+
+        <div class="row">
+          <label>{{transaction.date}}</label>
+        </div>
+
+        <div class="row">
+          <div class="row">
+            <label>From</label>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            {{transaction.fromAmount}}
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            {{transaction.from}}
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="row">
+            <label>To</label>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            {{transaction.toAmount}}
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            {{transaction.to}}
+          </div>
+        </div>
+        <hr>
+      </li>
+    </ul>
+  </div>
+
+
+  <nav class="navbar navbar-custom navbar-fixed-bottom">
+    <div class="container-fluid">
+      <p class="navbar-text pull-right">
+        <a [routerLink]="['/user', userId, 'profile']">
+          <span class="glyphicon glyphicon-user my-white-color"></span>
+        </a>
+      </p>
+    </div>
+  </nav>
+
+</div>

@@ -1,23 +1,30 @@
 <div class="container-fluid">
 
   <nav class="navbar navbar-custom navbar-fixed-top">
-    <div class="row">
+    <div class="container row">
 
       <div class="navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3">
         MassivX
       </div>
 
-      <div class="navbar-brand col-sm-3 col-md-3 col-lg-3">
+      <div class="navbar-brand col-sm-2 col-md-2 col-lg-2">
         <a [routerLink]="['/user', userId,'createwallet']"
            class="btn btn-success pull-right my-white-color">
           Create Wallet
         </a>
       </div>
 
-      <div class="navbar-brand my-white-color col-sm-3 col-md-3 col-lg-3">
+      <div class="navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2">
         <a [routerLink]="['/user', userId,'wallet']"
            class="btn btn-success pull-right my-white-color">
           My Wallets
+        </a>
+      </div>
+
+      <div class="navbar-brand my-white-color col-sm-2 col-md-2 col-lg-2">
+        <a [routerLink]="['/user', userId,'transactions']"
+           class="btn btn-success pull-right my-white-color">
+          View Transactions
         </a>
       </div>
 
@@ -31,51 +38,67 @@
     </div>
   </nav>
 
-  <div class="my-container my-margin">
+  <div class="container my-container my-margin">
 
     <div class="my-container row">
+      <form class="form-group" #f="ngForm">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <input  class="form-control"
+                  id="amount"
+                  type="text"
+                  name="amount"
+                  ngModel
+                  placeholder="YOU HAVE"
+                  #amount="ngModel"/>
+        </div>
 
-      <div class="col-sm-4 col-md-4 col-lg-4">
-        <input [(ngModel)]="amount"
-               type="text"
-               class="form-control"
-               id="amount"
-               placeholder="YOU HAVE"/>
-      </div>
+        <div class="col-sm-1 col-md-1 col-lg-1">
+          <select  class="form-control"
+                   id="from"
+                   name="from"
+                   ngModel
+                   #from="ngModel">
+            <option value="USD">
+              USD
+            </option>
+            <option value="EUR">
+              EUR
+            </option>
+            <option value="JPY">
+              JPY
+            </option>
+          </select>
+        </div>
 
-      <div class="col-sm-1 col-md-1 col-lg-1">
-        <select>
-          <option *ngFor="let currency of currencies"
-                  value="{{currency}}">
-            {{currency}}
-          </option>
-        </select>
-      </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <input class="form-control"
+                 id="exchangeAmount"
+                 type="text"
+                 name="exchangeAmount"
+                 ngModel
+                 placeholder="YOU GET"
+                 #exchangeAmount="ngModel"/>
+        </div>
 
-      <div class="col-sm-4 col-md-4 col-lg-4">
-        <input [(ngModel)]="exchange"
-               type="text"
-               class="form-control"
-               id="exchange"
-               placeholder="YOU GET"/>
-      </div>
+        <div class="col-sm-1 col-md-1 col-lg-1">
+          <select class="form-control"
+                  id="to"
+                  name="to"
+                  ngModel
+                  #to="ngModel">
+            <option value="BTC">
+              BTC
+            </option>
+          </select>
+        </div>
 
-      <div class="col-sm-1 col-md-1 col-lg-1">
-        <select>
-          <option *ngFor="let currency of currencies"
-                  value="{{currency}}">
-            {{currency}}
-          </option>
-        </select>
-      </div>
-
-      <div class="col-sm-2 col-md-2 col-lg-2">
-        <a (click)="exchange()"
-           class="btn btn-success btn-block">Exchange</a>
-      </div>
-
+        <div class="col-sm-2 col-md-2 col-lg-2">
+          <a (click)="exchange()"
+             class="btn btn-success btn-block">Exchange</a>
+        </div>
+      </form>
     </div>
-
+  </div>
 
     <div class=" container my-container row">
 
@@ -170,11 +193,20 @@
 
     <nav class="navbar navbar-custom navbar-fixed-bottom">
       <div class="container-fluid">
+
+        <p class="navbar-text pull-left">
+          <a [routerLink]="['/user', userId, 'forum']"
+             class="btn btn-success">
+            Forum
+          </a>
+        </p>
+
         <p class="navbar-text pull-right">
           <a [routerLink]="['/user', userId, 'profile']">
             <span class="glyphicon glyphicon-user my-white-color"></span>
           </a>
         </p>
+
       </div>
     </nav>
 

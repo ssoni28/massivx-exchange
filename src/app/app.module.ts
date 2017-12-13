@@ -37,6 +37,10 @@ import { TicketNewComponent } from './components/support/ticket-new/ticket-new.c
 import { TicketEditComponent } from './components/support/ticket-edit/ticket-edit.component';
 import { TicketListComponent } from './components/support/ticket-list/ticket-list.component';
 import {TicketService} from './services/ticket.service.client';
+import { ForumComponent } from './components/forum/forum.component';
+import { TransactionListComponent } from './components/transaction/transaction-list/transaction-list.component';
+import {TransactionService} from './services/transaction.service.client';
+
 
 @NgModule({
   // Declare components here
@@ -62,7 +66,9 @@ import {TicketService} from './services/ticket.service.client';
     SupportUserComponent,
     TicketNewComponent,
     TicketEditComponent,
-    TicketListComponent
+    TicketListComponent,
+    ForumComponent,
+    TransactionListComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +85,7 @@ import {TicketService} from './services/ticket.service.client';
     BittrexService,
     WalletService,
     TicketService,
+    TransactionService,
     WalletSearchServiceClient,
     AdminServiceClient,
     AuthenticationService],
